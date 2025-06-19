@@ -31,44 +31,44 @@ const Hero = () => {
         className="absolute inset-0 pointer-events-none"
       >
         <motion.div
-          animate={{ 
+          animate={{
             y: [-20, 20, -20],
             rotate: [0, 5, 0, -5, 0]
           }}
-          transition={{ 
-            duration: 6, 
-            repeat: Infinity, 
-            ease: "easeInOut" 
+          transition={{
+            duration: 6,
+            repeat: Infinity,
+            ease: "easeInOut"
           }}
           className="absolute top-20 left-10 text-blue-400 opacity-60"
         >
           <Code size={32} />
         </motion.div>
-        
+
         <motion.div
-          animate={{ 
+          animate={{
             y: [20, -20, 20],
             rotate: [0, -5, 0, 5, 0]
           }}
-          transition={{ 
-            duration: 8, 
-            repeat: Infinity, 
-            ease: "easeInOut" 
+          transition={{
+            duration: 8,
+            repeat: Infinity,
+            ease: "easeInOut"
           }}
           className="absolute top-32 right-16 text-purple-400 opacity-60"
         >
           <Sparkles size={28} />
         </motion.div>
-        
+
         <motion.div
-          animate={{ 
+          animate={{
             y: [-15, 15, -15],
             x: [-10, 10, -10]
           }}
-          transition={{ 
-            duration: 7, 
-            repeat: Infinity, 
-            ease: "easeInOut" 
+          transition={{
+            duration: 7,
+            repeat: Infinity,
+            ease: "easeInOut"
           }}
           className="absolute bottom-32 left-20 text-indigo-400 opacity-60"
         >
@@ -99,7 +99,7 @@ const Hero = () => {
               Rishabh Bansal
             </span>
           </h1>
-          
+
           {/* Enhanced title */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -121,16 +121,6 @@ const Hero = () => {
               <span className="inline-flex items-center space-x-1">
                 <Sparkles size={16} className="text-yellow-500" />
                 <span>2+ Years Experience</span>
-              </span>
-              <span className="text-gray-400">•</span>
-              <span className="inline-flex items-center space-x-1">
-                <span>🌍</span>
-                <span>Remote Ready</span>
-              </span>
-              <span className="text-gray-400">•</span>
-              <span className="inline-flex items-center space-x-1">
-                <span>🚀</span>
-                <span>Open to Opportunities</span>
               </span>
             </p>
           </motion.div>
@@ -181,7 +171,7 @@ const Hero = () => {
                 →
               </motion.div>
             </a>
-            
+
             <a
               href="https://linkedin.com/in/rishabh-bansal-5a08b496"
               target="_blank"

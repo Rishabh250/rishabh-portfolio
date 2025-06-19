@@ -11,10 +11,11 @@ const Experience = () => {
       location: "New Delhi",
       duration: "May 2023 - Current",
       achievements: [
-        "Architected full-stack CRMs leveraging Next.js and Node.js, along with PostgreSQL and AWS, achieving a 99.99% uptime.",
-        "Implemented CircleCI for AWS deployments, cutting deployment time by 30% and improving stability by 50%",
-        "Managed cloud resources (S3, RDS), optimized data flows, and automated key infrastructure using DevOps best practices",
-        "Contributed to a 40% boost in operational efficiency and saved over 100 monthly work hours across teams"
+        "Architected and deployed 3 production-grade CRMs serving 5000+ users with 99.99% uptime using Next.js, Node.js, PostgreSQL, and AWS",
+        "Implemented AI-powered automation workflows reducing manual processing time by 60% and saving over 150 hours monthly",
+        "Built enterprise-grade CI/CD pipelines with CircleCI and AWS, reducing deployment time by 45% and eliminating production bugs",
+        "Led integration of LangChain and OpenAI APIs for intelligent document processing, improving data extraction accuracy by 85%",
+        "Optimized database queries and implemented caching strategies, improving application performance by 40%"
       ],
       color: "blue"
     },

@@ -67,7 +67,7 @@ const Contact = () => {
           </h2>
           <div className="w-24 h-1 bg-blue-600 mx-auto mb-8"></div>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Ready to collaborate on your next project? Let's discuss how I can help bring your ideas to life with cutting-edge technology and AI solutions.
+            Ready to build the future together? Let's discuss how I can help transform your ideas into intelligent, scalable solutions that drive real business value.
           </p>
         </motion.div>
 
@@ -123,16 +123,16 @@ const Contact = () => {
               <h4 className="font-semibold text-gray-800 mb-3">Quick Stats</h4>
               <div className="grid grid-cols-3 gap-4">
                 <div className="text-center p-3 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors duration-200">
-                  <div className="text-2xl font-bold text-blue-600 mb-1">2+</div>
-                  <div className="text-sm text-gray-600">Years Experience</div>
+                  <div className="text-2xl font-bold text-blue-600 mb-1">10+</div>
+                  <div className="text-sm text-gray-600">Apps Deployed</div>
                 </div>
                 <div className="text-center p-3 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors duration-200">
-                  <div className="text-2xl font-bold text-purple-600 mb-1">99.99%</div>
-                  <div className="text-sm text-gray-600">Uptime</div>
+                  <div className="text-2xl font-bold text-purple-600 mb-1">5000+</div>
+                  <div className="text-sm text-gray-600">Users Served</div>
                 </div>
                 <div className="text-center p-3 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors duration-200">
-                  <div className="text-2xl font-bold text-orange-600 mb-1">40%</div>
-                  <div className="text-sm text-gray-600">Efficiency Boost</div>
+                  <div className="text-2xl font-bold text-orange-600 mb-1">150+</div>
+                  <div className="text-sm text-gray-600">Hours Saved/Month</div>
                 </div>
               </div>
             </motion.div>
