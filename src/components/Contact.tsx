@@ -2,14 +2,14 @@
 
 import { motion } from 'framer-motion';
 import {
-  Mail,
-  Phone,
-  MapPin,
-  Linkedin,
-  Send,
-  User,
-  MessageSquare,
-  FileText,
+    FileText,
+    Linkedin,
+    Mail,
+    MapPin,
+    MessageSquare,
+    Phone,
+    Send,
+    User,
 } from 'lucide-react';
 import { useState } from 'react';
 
@@ -66,7 +66,7 @@ const Contact = () => {
   return (
     <section
       id="contact"
-      className="py-20 bg-gradient-to-br from-blue-50 to-indigo-100"
+      className="py-20 bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-gray-800 dark:to-gray-700"
     >
       <div className="container mx-auto px-6">
         <motion.div
@@ -76,11 +76,11 @@ const Contact = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-6">
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-800 dark:text-gray-100 mb-6">
             Get In Touch
           </h2>
-          <div className="w-24 h-1 bg-blue-600 mx-auto mb-8"></div>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <div className="w-24 h-1 bg-blue-600 dark:bg-blue-400 mx-auto mb-8"></div>
+          <p className="text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
             Ready to build the future together? Let&apos;s discuss how I can
             help transform your ideas into intelligent, scalable solutions that
             drive real business value.
@@ -95,7 +95,7 @@ const Contact = () => {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <h3 className="text-2xl font-bold text-gray-800 mb-8">
+            <h3 className="text-2xl font-bold text-gray-800 dark:text-gray-100 mb-8">
               Contact Information
             </h3>
 
@@ -107,11 +107,11 @@ const Contact = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
                   viewport={{ once: true }}
-                  className="flex items-start space-x-4 p-4 bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300"
+                  className="flex items-start space-x-4 p-4 bg-white dark:bg-gray-800 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300"
                 >
                   <div className="flex-shrink-0 mt-1">{info.icon}</div>
                   <div>
-                    <h4 className="font-semibold text-gray-800 mb-1">
+                    <h4 className="font-semibold text-gray-800 dark:text-gray-100 mb-1">
                       {info.title}
                     </h4>
                     {info.link ? (
@@ -125,12 +125,12 @@ const Contact = () => {
                             ? 'noopener noreferrer'
                             : ''
                         }
-                        className="text-gray-600 hover:text-blue-600 transition-colors duration-200"
+                        className="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-200"
                       >
                         {info.value}
                       </a>
                     ) : (
-                      <p className="text-gray-600">{info.value}</p>
+                      <p className="text-gray-600 dark:text-gray-400">{info.value}</p>
                     )}
                   </div>
                 </motion.div>
@@ -142,27 +142,27 @@ const Contact = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
               viewport={{ once: true }}
-              className="mt-8 p-6 bg-white rounded-lg shadow-md"
+              className="mt-8 p-6 bg-white dark:bg-gray-800 rounded-lg shadow-md"
             >
-              <h4 className="font-semibold text-gray-800 mb-3">Quick Stats</h4>
+              <h4 className="font-semibold text-gray-800 dark:text-gray-100 mb-3">Quick Stats</h4>
               <div className="grid grid-cols-3 gap-4">
-                <div className="text-center p-3 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors duration-200">
+                <div className="text-center p-3 bg-gray-50 dark:bg-gray-700 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-600 transition-colors duration-200">
                   <div className="text-2xl font-bold text-blue-600 mb-1">
                     10+
                   </div>
-                  <div className="text-sm text-gray-600">Apps Deployed</div>
+                  <div className="text-sm text-gray-600 dark:text-gray-400">Apps Deployed</div>
                 </div>
-                <div className="text-center p-3 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors duration-200">
+                <div className="text-center p-3 bg-gray-50 dark:bg-gray-700 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-600 transition-colors duration-200">
                   <div className="text-2xl font-bold text-purple-600 mb-1">
-                    5000+
+                    500+
                   </div>
-                  <div className="text-sm text-gray-600">Users Served</div>
+                  <div className="text-sm text-gray-600 dark:text-gray-400">Users Served</div>
                 </div>
-                <div className="text-center p-3 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors duration-200">
+                <div className="text-center p-3 bg-gray-50 dark:bg-gray-700 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-600 transition-colors duration-200">
                   <div className="text-2xl font-bold text-orange-600 mb-1">
                     150+
                   </div>
-                  <div className="text-sm text-gray-600">Hours Saved/Month</div>
+                  <div className="text-sm text-gray-600 dark:text-gray-400">Hours Saved/Month</div>
                 </div>
               </div>
             </motion.div>
@@ -175,7 +175,7 @@ const Contact = () => {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <div className="bg-white rounded-2xl shadow-xl p-8 border border-gray-100">
+            <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-8 border border-gray-100 dark:border-gray-700">
               <div className="text-center mb-8">
                 <motion.div
                   initial={{ scale: 0 }}
@@ -186,10 +186,10 @@ const Contact = () => {
                 >
                   <MessageSquare className="text-white" size={28} />
                 </motion.div>
-                <h3 className="text-3xl font-bold text-gray-800 mb-2">
+                <h3 className="text-3xl font-bold text-gray-800 dark:text-gray-100 mb-2">
                   Send a Message
                 </h3>
-                <p className="text-gray-600">
+                <p className="text-gray-600 dark:text-gray-400">
                   I&apos;d love to hear from you. Let&apos;s start a
                   conversation!
                 </p>
@@ -205,7 +205,7 @@ const Contact = () => {
                   >
                     <label
                       htmlFor="name"
-                      className="block text-sm font-semibold text-gray-700 mb-3"
+                      className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-3"
                     >
                       <div className="flex items-center space-x-2">
                         <User size={16} className="text-blue-600" />
@@ -219,7 +219,7 @@ const Contact = () => {
                       required
                       value={formData.name}
                       onChange={handleChange}
-                      className="w-full text-black px-4 py-4 border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-200 bg-gray-50 hover:bg-white"
+                      className="w-full text-black dark:text-white px-4 py-4 border-2 border-gray-200 dark:border-gray-600 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-200 bg-gray-50 dark:bg-gray-700 hover:bg-white dark:hover:bg-gray-600"
                       placeholder="John Doe"
                     />
                   </motion.div>
@@ -232,7 +232,7 @@ const Contact = () => {
                   >
                     <label
                       htmlFor="email"
-                      className="block text-sm font-semibold text-gray-700 mb-3"
+                      className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-3"
                     >
                       <div className="flex items-center space-x-2">
                         <Mail size={16} className="text-blue-600" />
@@ -246,7 +246,7 @@ const Contact = () => {
                       required
                       value={formData.email}
                       onChange={handleChange}
-                      className="w-full text-black px-4 py-4 border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-200 bg-gray-50 hover:bg-white"
+                      className="w-full text-black dark:text-white px-4 py-4 border-2 border-gray-200 dark:border-gray-600 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-200 bg-gray-50 dark:bg-gray-700 hover:bg-white dark:hover:bg-gray-600"
                       placeholder="john@example.com"
                     />
                   </motion.div>
@@ -260,7 +260,7 @@ const Contact = () => {
                 >
                   <label
                     htmlFor="subject"
-                    className="block text-sm font-semibold text-gray-700 mb-3"
+                    className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-3"
                   >
                     <div className="flex items-center space-x-2">
                       <FileText size={16} className="text-blue-600" />
@@ -287,7 +287,7 @@ const Contact = () => {
                 >
                   <label
                     htmlFor="message"
-                    className="block text-sm font-semibold text-gray-700 mb-3"
+                    className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-3"
                   >
                     <div className="flex items-center space-x-2">
                       <MessageSquare size={16} className="text-blue-600" />
@@ -301,7 +301,7 @@ const Contact = () => {
                     rows={6}
                     value={formData.message}
                     onChange={handleChange}
-                    className="w-full text-black px-4 py-4 border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-200 resize-vertical bg-gray-50 hover:bg-white"
+                    className="w-full text-black dark:text-white px-4 py-4 border-2 border-gray-200 dark:border-gray-600 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-200 resize-vertical bg-gray-50 dark:bg-gray-700 hover:bg-white dark:hover:bg-gray-600"
                     placeholder="Hi Rishabh, I'm interested in discussing a project with you. I'd love to learn more about your AI development expertise..."
                   />
                 </motion.div>
@@ -329,7 +329,7 @@ const Contact = () => {
                 </motion.button>
 
                 <div className="text-center pt-4">
-                  <p className="text-sm text-gray-500">
+                  <p className="text-sm text-gray-500 dark:text-gray-400">
                     I typically respond within 24 hours ⚡
                   </p>
                 </div>

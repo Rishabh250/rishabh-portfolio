@@ -1,14 +1,14 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { ExternalLink, Globe, Bot, Settings } from 'lucide-react';
+import { Bot, ExternalLink, Globe, Settings } from 'lucide-react';
 
 const Projects = () => {
   const webProjects = [
     {
       title: 'LoFi CRM',
       description:
-        'Enterprise-grade CRM platform serving 5000+ users with advanced analytics, automated workflows, and real-time collaboration features. Achieved 99.99% uptime with scalable architecture.',
+        'Enterprise-grade CRM platform serving 500+ users with advanced analytics, automated workflows, and real-time collaboration features. Achieved 99.99% uptime with scalable architecture.',
       tech: ['Next.js', 'Node.js', 'PostgreSQL', 'AWS', 'CircleCI', 'Redis'],
       link: 'https://lofiadmin.lorien.finance',
       category: 'Web Application',
@@ -56,7 +56,7 @@ const Projects = () => {
     {
       title: 'LinkedIn Post Generator',
       description:
-        'AI-powered content creation tool with brand voice analysis, trending topic integration, and engagement prediction. Generated 500+ high-performing posts with 3x engagement rates.',
+        'AI-powered content creation tool with brand voice analysis, trending topic integration, and engagement prediction. Generated  high-performing posts with 3x engagement rates.',
       tech: ['LangChain', 'OpenAI', 'Node.js', 'Streamlit', 'Analytics'],
       category: 'AI Tool',
     },
@@ -104,7 +104,7 @@ const Projects = () => {
   ];
 
   return (
-    <section id="projects" className="py-20 bg-white">
+    <section id="projects" className="py-20 bg-white dark:bg-gray-900">
       <div className="container mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -113,10 +113,10 @@ const Projects = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-6">
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-800 dark:text-gray-100 mb-6">
             Featured Projects
           </h2>
-          <div className="w-24 h-1 bg-blue-600 mx-auto mb-8"></div>
+          <div className="w-24 h-1 bg-blue-600 dark:bg-blue-400 mx-auto mb-8"></div>
         </motion.div>
 
         {/* Web Projects */}
@@ -129,7 +129,7 @@ const Projects = () => {
         >
           <div className="flex items-center mb-8">
             <Globe className="text-blue-600 mr-3" size={28} />
-            <h3 className="text-2xl font-bold text-gray-800">
+            <h3 className="text-2xl font-bold text-gray-800 dark:text-gray-100">
               Web Applications
             </h3>
           </div>
@@ -142,19 +142,19 @@ const Projects = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.2 }}
                 viewport={{ once: true }}
-                className="bg-gray-50 rounded-xl p-6 hover:shadow-lg transition-shadow duration-300 group"
+                className="bg-gray-50 dark:bg-gray-800 rounded-xl p-6 hover:shadow-lg transition-shadow duration-300 group"
               >
                 <div className="mb-4">
-                  <span className="text-sm font-medium text-blue-600 bg-blue-100 px-3 py-1 rounded-full">
+                  <span className="text-sm font-medium text-blue-600 dark:text-blue-400 bg-blue-100 dark:bg-blue-900/30 px-3 py-1 rounded-full">
                     {project.category}
                   </span>
                 </div>
 
-                <h4 className="text-xl font-bold text-gray-800 mb-3 group-hover:text-blue-600 transition-colors">
+                <h4 className="text-xl font-bold text-gray-800 dark:text-gray-100 mb-3 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
                   {project.title}
                 </h4>
 
-                <p className="text-gray-600 mb-4 text-sm leading-relaxed">
+                <p className="text-gray-600 dark:text-gray-400 mb-4 text-sm leading-relaxed">
                   {project.description}
                 </p>
 
@@ -162,7 +162,7 @@ const Projects = () => {
                   {project.tech.map((tech, techIndex) => (
                     <span
                       key={techIndex}
-                      className="text-xs bg-white text-gray-700 px-2 py-1 rounded border"
+                      className="text-xs bg-white dark:bg-gray-700 text-gray-700 dark:text-gray-300 px-2 py-1 rounded border dark:border-gray-600"
                     >
                       {tech}
                     </span>
@@ -174,7 +174,7 @@ const Projects = () => {
                     href={project.link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center space-x-1 text-blue-600 hover:text-blue-700 text-sm font-medium"
+                    className="flex items-center space-x-1 text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 text-sm font-medium"
                   >
                     <ExternalLink size={16} />
                     <span>Live Demo</span>
@@ -195,7 +195,7 @@ const Projects = () => {
         >
           <div className="flex items-center mb-8">
             <Bot className="text-purple-600 mr-3" size={28} />
-            <h3 className="text-2xl font-bold text-gray-800">
+            <h3 className="text-2xl font-bold text-gray-800 dark:text-gray-100">
               AI Projects & Tools
             </h3>
           </div>
@@ -208,19 +208,19 @@ const Projects = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.2 }}
                 viewport={{ once: true }}
-                className="bg-gradient-to-br from-purple-50 to-indigo-50 rounded-xl p-6 hover:shadow-lg transition-shadow duration-300 group"
+                className="bg-gradient-to-br from-purple-50 to-indigo-50 dark:from-purple-900/20 dark:to-indigo-900/20 rounded-xl p-6 hover:shadow-lg transition-shadow duration-300 group"
               >
                 <div className="mb-4">
-                  <span className="text-sm font-medium text-purple-600 bg-purple-100 px-3 py-1 rounded-full">
+                  <span className="text-sm font-medium text-purple-600 dark:text-purple-400 bg-purple-100 dark:bg-purple-900/30 px-3 py-1 rounded-full">
                     {project.category}
                   </span>
                 </div>
 
-                <h4 className="text-xl font-bold text-gray-800 mb-3 group-hover:text-purple-600 transition-colors">
+                <h4 className="text-xl font-bold text-gray-800 dark:text-gray-100 mb-3 group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors">
                   {project.title}
                 </h4>
 
-                <p className="text-gray-600 mb-4 text-sm leading-relaxed">
+                <p className="text-gray-600 dark:text-gray-400 mb-4 text-sm leading-relaxed">
                   {project.description}
                 </p>
 
@@ -228,7 +228,7 @@ const Projects = () => {
                   {project.tech.map((tech, techIndex) => (
                     <span
                       key={techIndex}
-                      className="text-xs bg-white text-gray-700 px-2 py-1 rounded border"
+                      className="text-xs bg-white dark:bg-gray-700 text-gray-700 dark:text-gray-300 px-2 py-1 rounded border dark:border-gray-600"
                     >
                       {tech}
                     </span>
@@ -248,7 +248,7 @@ const Projects = () => {
         >
           <div className="flex items-center mb-8">
             <Settings className="text-orange-600 mr-3" size={28} />
-            <h3 className="text-2xl font-bold text-gray-800">
+            <h3 className="text-2xl font-bold text-gray-800 dark:text-gray-100">
               Automation & Workflows
             </h3>
           </div>
@@ -261,19 +261,19 @@ const Projects = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.2 }}
                 viewport={{ once: true }}
-                className="bg-gradient-to-br from-orange-50 to-yellow-50 rounded-xl p-6 hover:shadow-lg transition-shadow duration-300 group"
+                className="bg-gradient-to-br from-orange-50 to-yellow-50 dark:from-orange-900/20 dark:to-yellow-900/20 rounded-xl p-6 hover:shadow-lg transition-shadow duration-300 group"
               >
                 <div className="mb-4">
-                  <span className="text-sm font-medium text-orange-600 bg-orange-100 px-3 py-1 rounded-full">
+                  <span className="text-sm font-medium text-orange-600 dark:text-orange-400 bg-orange-100 dark:bg-orange-900/30 px-3 py-1 rounded-full">
                     {project.category}
                   </span>
                 </div>
 
-                <h4 className="text-xl font-bold text-gray-800 mb-3 group-hover:text-orange-600 transition-colors">
+                <h4 className="text-xl font-bold text-gray-800 dark:text-gray-100 mb-3 group-hover:text-orange-600 dark:group-hover:text-orange-400 transition-colors">
                   {project.title}
                 </h4>
 
-                <p className="text-gray-600 mb-4 text-sm leading-relaxed">
+                <p className="text-gray-600 dark:text-gray-400 mb-4 text-sm leading-relaxed">
                   {project.description}
                 </p>
 
@@ -281,7 +281,7 @@ const Projects = () => {
                   {project.tech.map((tech, techIndex) => (
                     <span
                       key={techIndex}
-                      className="text-xs bg-white text-gray-700 px-2 py-1 rounded border"
+                      className="text-xs bg-white dark:bg-gray-700 text-gray-700 dark:text-gray-300 px-2 py-1 rounded border dark:border-gray-600"
                     >
                       {tech}
                     </span>
