@@ -14,6 +14,8 @@ const geistMono = Geist_Mono({
   subsets: ['latin'],
 });
 
+export const viewport = 'width=device-width, initial-scale=1';
+
 export const metadata: Metadata = {
   title: 'Rishabh Bansal - AI-Focused Full Stack Developer',
   description:
@@ -28,7 +30,6 @@ export const metadata: Metadata = {
     'Rishabh Bansal',
   ],
   authors: [{ name: 'Rishabh Bansal' }],
-  viewport: 'width=device-width, initial-scale=1',
   robots: 'index, follow',
   icons: {
     icon: [
@@ -45,7 +46,7 @@ export const metadata: Metadata = {
     locale: 'en_US',
     images: [
       {
-        url: '/favicon.svg',
+        url: '/favicon.ico',
         width: 40,
         height: 40,
         alt: 'Rishabh Bansal Logo',
