@@ -90,7 +90,7 @@ const Hero = () => {
             className="inline-flex items-center space-x-2 bg-white/80 backdrop-blur-sm px-4 py-2 rounded-full shadow-md mb-6"
           >
             <span className="text-2xl">👋</span>
-            <span className="text-gray-700 font-medium">Hey there! I'm</span>
+            <span className="text-gray-700 font-medium">Hey there! I&apos;m</span>
           </motion.div>
 
           {/* Name with gradient text */}
@@ -162,7 +162,7 @@ const Hero = () => {
               className="group flex items-center space-x-2 bg-gradient-to-r from-blue-600 to-blue-700 text-white px-8 py-4 rounded-full hover:from-blue-700 hover:to-blue-800 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
             >
               <Mail size={20} />
-              <span className="font-medium">Let's Work Together</span>
+              <span className="font-medium">Let&apos;s Work Together</span>
               <motion.div
                 animate={{ x: [0, 5, 0] }}
                 transition={{ duration: 1.5, repeat: Infinity }}

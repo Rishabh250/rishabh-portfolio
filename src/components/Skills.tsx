@@ -143,14 +143,14 @@ const Skills = () => {
               >
                 <div className="flex items-center justify-between mb-4">
                   <div className="bg-blue-100 text-blue-600 px-3 py-1 rounded-full text-sm font-medium">
-                    Master's Degree
+                    Master&apos;s Degree
                   </div>
                   <span className="text-gray-500 text-sm">Jun 2021 - Jun 2023</span>
                 </div>
                 <h4 className="text-xl font-bold text-gray-800 mb-2">
                   Master of Computer Application (MCA)
                 </h4>
-                <p className="text-gray-600 mb-3">Sharda University – Greater Noida</p>
+                <p className="text-gray-600 mb-3">Sharda University &ndash; Greater Noida</p>
                 <div className="flex items-center space-x-2">
                   <span className="text-sm text-gray-600">CGPA:</span>
                   <span className="text-lg font-bold text-blue-600">7.9</span>
@@ -167,14 +167,14 @@ const Skills = () => {
               >
                 <div className="flex items-center justify-between mb-4">
                   <div className="bg-green-100 text-green-600 px-3 py-1 rounded-full text-sm font-medium">
-                    Bachelor's Degree
+                    Bachelor&apos;s Degree
                   </div>
                   <span className="text-gray-500 text-sm">Jun 2018 - Jun 2021</span>
                 </div>
                 <h4 className="text-xl font-bold text-gray-800 mb-2">
                   Bachelor of Computer Application (BCA)
                 </h4>
-                <p className="text-gray-600 mb-3">Sharda University – Greater Noida</p>
+                <p className="text-gray-600 mb-3">Sharda University &ndash; Greater Noida</p>
                 <div className="flex items-center space-x-2">
                   <span className="text-sm text-gray-600">CGPA:</span>
                   <span className="text-lg font-bold text-green-600">7.3</span>
