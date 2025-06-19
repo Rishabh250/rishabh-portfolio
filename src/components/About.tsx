@@ -26,7 +26,10 @@ const About = () => {
   ];
 
   return (
-    <section id="about" className="py-20 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900">
+    <section
+      id="about"
+      className="py-20 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900"
+    >
       <div className="container mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -43,14 +46,17 @@ const About = () => {
             viewport={{ once: true }}
           >
             <div className="w-2 h-2 bg-blue-400 rounded-full animate-pulse"></div>
-            <span className="text-gray-300 font-medium text-sm">Get to know me</span>
+            <span className="text-gray-300 font-medium text-sm">
+              Get to know me
+            </span>
           </motion.div>
-          
+
           <h2 className="text-4xl md:text-6xl font-bold text-gray-100 mb-4">
             About Me
           </h2>
           <p className="text-lg text-gray-400 max-w-2xl mx-auto">
-            Passionate developer crafting intelligent solutions for tomorrow's challenges
+            Passionate developer crafting intelligent solutions for
+            tomorrow&apos;s challenges
           </p>
         </motion.div>
 
@@ -84,8 +90,11 @@ const About = () => {
             </p>
 
             <div className="flex flex-wrap gap-4">
-              <motion.div 
-                whileHover={{ scale: 1.05, backgroundColor: 'rgba(59, 130, 246, 0.2)' }}
+              <motion.div
+                whileHover={{
+                  scale: 1.05,
+                  backgroundColor: 'rgba(59, 130, 246, 0.2)',
+                }}
                 className="flex items-center gap-2 bg-blue-500/20 backdrop-blur-lg px-4 py-3 rounded-full border border-blue-500/30"
               >
                 <MapPin size={16} className="text-blue-400" />
@@ -93,8 +102,11 @@ const About = () => {
                   Bulandshahr, UP, India
                 </span>
               </motion.div>
-              <motion.div 
-                whileHover={{ scale: 1.05, backgroundColor: 'rgba(34, 197, 94, 0.2)' }}
+              <motion.div
+                whileHover={{
+                  scale: 1.05,
+                  backgroundColor: 'rgba(34, 197, 94, 0.2)',
+                }}
                 className="flex items-center gap-2 bg-green-500/20 backdrop-blur-lg px-4 py-3 rounded-full border border-green-500/30"
               >
                 <Mail size={16} className="text-green-400" />

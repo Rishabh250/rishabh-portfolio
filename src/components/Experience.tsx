@@ -17,7 +17,7 @@ const Experience = () => {
         'Led integration of LangChain and OpenAI APIs for intelligent document processing, improving data extraction accuracy by 85%',
         'Optimized database queries and implemented caching strategies, improving application performance by 40%',
       ],
-      color: 'blue'
+      color: 'blue',
     },
     {
       company: 'Kylo Apps',
@@ -30,12 +30,15 @@ const Experience = () => {
         'Participated in code reviews and agile development processes, gaining experience in mobile app lifecycle management',
         'Built responsive mobile interfaces and integrated REST APIs for seamless data synchronization',
       ],
-      color: 'green'
+      color: 'green',
     },
   ];
 
   return (
-    <section id="experience" className="py-20 bg-gradient-to-br from-gray-50 via-blue-50/30 to-purple-50/30 dark:from-gray-900 dark:via-gray-800 dark:to-gray-700">
+    <section
+      id="experience"
+      className="py-20 bg-gradient-to-br from-gray-50 via-blue-50/30 to-purple-50/30 dark:from-gray-900 dark:via-gray-800 dark:to-gray-700"
+    >
       <div className="container mx-auto px-6">
         {/* Enhanced Header */}
         <motion.div
@@ -53,14 +56,17 @@ const Experience = () => {
             viewport={{ once: true }}
           >
             <div className="w-2 h-2 bg-blue-500 dark:bg-blue-400 rounded-full animate-pulse"></div>
-            <span className="text-gray-700 dark:text-gray-300 font-medium text-sm">Professional Journey</span>
+            <span className="text-gray-700 dark:text-gray-300 font-medium text-sm">
+              Professional Journey
+            </span>
           </motion.div>
-          
+
           <h2 className="text-4xl md:text-6xl font-bold text-gray-900 dark:text-gray-100 mb-4">
             Work Experience
           </h2>
           <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-            Transforming challenges into opportunities through innovative solutions and continuous learning
+            Transforming challenges into opportunities through innovative
+            solutions and continuous learning
           </p>
         </motion.div>
 
@@ -88,25 +94,36 @@ const Experience = () => {
                 {/* Header Section */}
                 <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between mb-6">
                   <div className="flex-1">
-                    <motion.h3 
+                    <motion.h3
                       className="text-3xl font-bold text-gray-800 dark:text-gray-100 mb-3 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors"
                       whileHover={{ scale: 1.02 }}
                     >
                       {exp.position}
                     </motion.h3>
                     <div className="flex items-center space-x-2 text-gray-600 dark:text-gray-400 mb-3">
-                      <Building size={20} className="text-blue-600 dark:text-blue-400" />
-                      <span className="font-semibold text-lg">{exp.company}</span>
+                      <Building
+                        size={20}
+                        className="text-blue-600 dark:text-blue-400"
+                      />
+                      <span className="font-semibold text-lg">
+                        {exp.company}
+                      </span>
                     </div>
                   </div>
 
                   <div className="flex flex-col lg:items-end space-y-3 mt-4 lg:mt-0">
                     <div className="flex items-center space-x-2 text-gray-500 dark:text-gray-400">
-                      <Calendar size={18} className="text-purple-600 dark:text-purple-400" />
+                      <Calendar
+                        size={18}
+                        className="text-purple-600 dark:text-purple-400"
+                      />
                       <span className="font-medium">{exp.duration}</span>
                     </div>
                     <div className="flex items-center space-x-2 text-gray-500 dark:text-gray-400">
-                      <MapPin size={18} className="text-green-600 dark:text-green-400" />
+                      <MapPin
+                        size={18}
+                        className="text-green-600 dark:text-green-400"
+                      />
                       <span className="font-medium">{exp.location}</span>
                     </div>
                   </div>
@@ -114,7 +131,10 @@ const Experience = () => {
                 {/* Achievements Section */}
                 <div className="space-y-4">
                   <h4 className="text-xl font-semibold text-gray-800 dark:text-gray-100 mb-4 flex items-center">
-                    <Award size={20} className="text-blue-600 dark:text-blue-400 mr-2" />
+                    <Award
+                      size={20}
+                      className="text-blue-600 dark:text-blue-400 mr-2"
+                    />
                     Key Achievements
                   </h4>
                   {exp.achievements.map((achievement, achIndex) => (

@@ -1,18 +1,13 @@
 'use client';
 
 import { motion, useScroll, useTransform } from 'framer-motion';
-import {
-  ChevronDown,
-  Linkedin,
-  Mail
-} from 'lucide-react';
+import { ChevronDown, Linkedin, Mail } from 'lucide-react';
 import { useEffect, useState } from 'react';
 
 const Hero = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const { scrollY } = useScroll();
   const y1 = useTransform(scrollY, [0, 300], [0, -50]);
-  const y2 = useTransform(scrollY, [0, 300], [0, -100]);
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
@@ -96,7 +91,10 @@ const Hero = () => {
         />
       </div>
 
-      <motion.div style={{ y: y1 }} className="container mx-auto px-6 text-center relative z-10">
+      <motion.div
+        style={{ y: y1 }}
+        className="container mx-auto px-6 text-center relative z-10"
+      >
         {/* Glassmorphism Greeting Badge */}
         <motion.div
           initial={{ opacity: 0, scale: 0.8, y: 20 }}
@@ -155,9 +153,7 @@ const Hero = () => {
           transition={{ duration: 0.8, delay: 0.4 }}
           className="mb-10"
         >
-          <motion.p
-            className="text-2xl md:text-3xl text-gray-800 dark:text-gray-200 font-bold mb-4"
-          >
+          <motion.p className="text-2xl md:text-3xl text-gray-800 dark:text-gray-200 font-bold mb-4">
             <motion.span
               animate={{
                 color: ['#1f2937', '#3b82f6', '#8b5cf6', '#1f2937'],
@@ -235,29 +231,50 @@ const Hero = () => {
               <motion.div
                 animate={{
                   background: [
-                    `linear-gradient(45deg, ${achievement.color === 'blue' ? 'rgba(59, 130, 246, 0.1)' :
-                                               achievement.color === 'green' ? 'rgba(34, 197, 94, 0.1)' :
-                                               achievement.color === 'purple' ? 'rgba(147, 51, 234, 0.1)' :
-                                               'rgba(249, 115, 22, 0.1)'} 0%, transparent 100%)`,
-                    `linear-gradient(45deg, transparent 0%, ${achievement.color === 'blue' ? 'rgba(59, 130, 246, 0.2)' :
-                                                              achievement.color === 'green' ? 'rgba(34, 197, 94, 0.2)' :
-                                                              achievement.color === 'purple' ? 'rgba(147, 51, 234, 0.2)' :
-                                                              'rgba(249, 115, 22, 0.2)'} 100%)`,
+                    `linear-gradient(45deg, ${
+                      achievement.color === 'blue'
+                        ? 'rgba(59, 130, 246, 0.1)'
+                        : achievement.color === 'green'
+                          ? 'rgba(34, 197, 94, 0.1)'
+                          : achievement.color === 'purple'
+                            ? 'rgba(147, 51, 234, 0.1)'
+                            : 'rgba(249, 115, 22, 0.1)'
+                    } 0%, transparent 100%)`,
+                    `linear-gradient(45deg, transparent 0%, ${
+                      achievement.color === 'blue'
+                        ? 'rgba(59, 130, 246, 0.2)'
+                        : achievement.color === 'green'
+                          ? 'rgba(34, 197, 94, 0.2)'
+                          : achievement.color === 'purple'
+                            ? 'rgba(147, 51, 234, 0.2)'
+                            : 'rgba(249, 115, 22, 0.2)'
+                    } 100%)`,
                   ],
                 }}
-                transition={{ duration: 3, repeat: Infinity, repeatType: 'reverse' }}
+                transition={{
+                  duration: 3,
+                  repeat: Infinity,
+                  repeatType: 'reverse',
+                }}
                 className="absolute inset-0"
               />
 
               <div className="relative z-10">
                 <motion.div
                   animate={{ scale: [1, 1.1, 1] }}
-                  transition={{ duration: 2, repeat: Infinity, delay: index * 0.5 }}
+                  transition={{
+                    duration: 2,
+                    repeat: Infinity,
+                    delay: index * 0.5,
+                  }}
                   className={`text-3xl font-bold mb-2 ${
-                    achievement.color === 'blue' ? 'text-blue-600 dark:text-blue-400' :
-                    achievement.color === 'green' ? 'text-green-600 dark:text-green-400' :
-                    achievement.color === 'purple' ? 'text-purple-600 dark:text-purple-400' :
-                    'text-orange-600 dark:text-orange-400'
+                    achievement.color === 'blue'
+                      ? 'text-blue-600 dark:text-blue-400'
+                      : achievement.color === 'green'
+                        ? 'text-green-600 dark:text-green-400'
+                        : achievement.color === 'purple'
+                          ? 'text-purple-600 dark:text-purple-400'
+                          : 'text-orange-600 dark:text-orange-400'
                   }`}
                 >
                   {achievement.number}
@@ -293,7 +310,11 @@ const Hero = () => {
                   'linear-gradient(45deg, transparent 0%, rgba(255,255,255,0.1) 100%)',
                 ],
               }}
-              transition={{ duration: 2, repeat: Infinity, repeatType: 'reverse' }}
+              transition={{
+                duration: 2,
+                repeat: Infinity,
+                repeatType: 'reverse',
+              }}
               className="absolute inset-0"
             />
             <Mail size={20} />
@@ -348,7 +369,11 @@ const Hero = () => {
             }}
             transition={{ duration: 2.5, repeat: Infinity }}
             className="p-3 rounded-full bg-white/90 dark:bg-gray-800/90 backdrop-blur-lg border border-white/50 dark:border-gray-700/50 cursor-pointer"
-            onClick={() => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })}
+            onClick={() =>
+              document
+                .getElementById('about')
+                ?.scrollIntoView({ behavior: 'smooth' })
+            }
           >
             <ChevronDown
               size={24}
