@@ -1,25 +1,38 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { ChevronDown, Mail, Linkedin, Code, Sparkles, Rocket } from 'lucide-react';
+import {
+  ChevronDown,
+  Mail,
+  Linkedin,
+  Code,
+  Sparkles,
+  Rocket,
+} from 'lucide-react';
 
 const Hero = () => {
   const achievements = [
-    { number: "10+", label: "Production Apps", icon: "🚀" },
-    { number: "45%", label: "Efficiency Boost", icon: "⚡" },
-    { number: "150+", label: "Hours Saved/Month", icon: "⏰" },
-    { number: "99.99%", label: "Uptime", icon: "🎯" }
+    { number: '10+', label: 'Production Apps', icon: '🚀' },
+    { number: '45%', label: 'Efficiency Boost', icon: '⚡' },
+    { number: '150+', label: 'Hours Saved/Month', icon: '⏰' },
+    { number: '99.99%', label: 'Uptime', icon: '🎯' },
   ];
 
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden">
+    <section
+      id="home"
+      className="min-h-screen flex items-center justify-center relative overflow-hidden"
+    >
       {/* Animated Background */}
       <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50">
         <div className="absolute inset-0 opacity-40">
-          <div className="absolute inset-0" style={{
-            backgroundImage: `radial-gradient(circle at 1px 1px, rgba(156,146,172,0.1) 1px, transparent 0)`,
-            backgroundSize: '20px 20px'
-          }}></div>
+          <div
+            className="absolute inset-0"
+            style={{
+              backgroundImage: `radial-gradient(circle at 1px 1px, rgba(156,146,172,0.1) 1px, transparent 0)`,
+              backgroundSize: '20px 20px',
+            }}
+          ></div>
         </div>
       </div>
 
@@ -33,12 +46,12 @@ const Hero = () => {
         <motion.div
           animate={{
             y: [-20, 20, -20],
-            rotate: [0, 5, 0, -5, 0]
+            rotate: [0, 5, 0, -5, 0],
           }}
           transition={{
             duration: 6,
             repeat: Infinity,
-            ease: "easeInOut"
+            ease: 'easeInOut',
           }}
           className="absolute top-20 left-10 text-blue-400 opacity-60"
         >
@@ -48,12 +61,12 @@ const Hero = () => {
         <motion.div
           animate={{
             y: [20, -20, 20],
-            rotate: [0, -5, 0, 5, 0]
+            rotate: [0, -5, 0, 5, 0],
           }}
           transition={{
             duration: 8,
             repeat: Infinity,
-            ease: "easeInOut"
+            ease: 'easeInOut',
           }}
           className="absolute top-32 right-16 text-purple-400 opacity-60"
         >
@@ -63,12 +76,12 @@ const Hero = () => {
         <motion.div
           animate={{
             y: [-15, 15, -15],
-            x: [-10, 10, -10]
+            x: [-10, 10, -10],
           }}
           transition={{
             duration: 7,
             repeat: Infinity,
-            ease: "easeInOut"
+            ease: 'easeInOut',
           }}
           className="absolute bottom-32 left-20 text-indigo-400 opacity-60"
         >
@@ -90,7 +103,9 @@ const Hero = () => {
             className="inline-flex items-center space-x-2 bg-white/80 backdrop-blur-sm px-4 py-2 rounded-full shadow-md mb-6"
           >
             <span className="text-2xl">👋</span>
-            <span className="text-gray-700 font-medium">Hey there! I&apos;m</span>
+            <span className="text-gray-700 font-medium">
+              Hey there! I&apos;m
+            </span>
           </motion.div>
 
           {/* Name with gradient text */}
@@ -113,9 +128,14 @@ const Hero = () => {
             <p className="text-lg md:text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
               Crafting Intelligent Solutions with{' '}
               <span className="text-blue-600 font-semibold">AI/ML</span>,{' '}
-              <span className="text-green-600 font-semibold">Full Stack Development</span>,{' '}
-              <span className="text-purple-600 font-semibold">Cloud Architecture</span> &{' '}
-              <span className="text-orange-600 font-semibold">DevOps</span>
+              <span className="text-green-600 font-semibold">
+                Full Stack Development
+              </span>
+              ,{' '}
+              <span className="text-purple-600 font-semibold">
+                Cloud Architecture
+              </span>{' '}
+              & <span className="text-orange-600 font-semibold">DevOps</span>
             </p>
             <p className="text-gray-500 mt-3 flex items-center justify-center space-x-4">
               <span className="inline-flex items-center space-x-1">
@@ -190,7 +210,9 @@ const Hero = () => {
             transition={{ duration: 0.8, delay: 0.7 }}
             className="flex flex-col items-center space-y-2"
           >
-            <span className="text-sm text-gray-500 font-medium">Scroll to explore</span>
+            <span className="text-sm text-gray-500 font-medium">
+              Scroll to explore
+            </span>
             <motion.div
               animate={{ y: [0, 8, 0] }}
               transition={{ duration: 2, repeat: Infinity }}

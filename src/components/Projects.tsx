@@ -6,68 +6,101 @@ import { ExternalLink, Globe, Bot, Settings } from 'lucide-react';
 const Projects = () => {
   const webProjects = [
     {
-      title: "LoFi CRM",
-      description: "Enterprise-grade CRM platform serving 5000+ users with advanced analytics, automated workflows, and real-time collaboration features. Achieved 99.99% uptime with scalable architecture.",
-      tech: ["Next.js", "Node.js", "PostgreSQL", "AWS", "CircleCI", "Redis"],
-      link: "https://lofiadmin.lorien.finance",
-      category: "Web Application"
+      title: 'LoFi CRM',
+      description:
+        'Enterprise-grade CRM platform serving 5000+ users with advanced analytics, automated workflows, and real-time collaboration features. Achieved 99.99% uptime with scalable architecture.',
+      tech: ['Next.js', 'Node.js', 'PostgreSQL', 'AWS', 'CircleCI', 'Redis'],
+      link: 'https://lofiadmin.lorien.finance',
+      category: 'Web Application',
     },
     {
-      title: "Lorien Web App",
-      description: "AI-enhanced education loan platform with intelligent form prefilling, document verification, and automated eligibility assessment. Increased conversion rates by 35% through smart UX optimization.",
-      tech: ["Next.js", "Node.js", "AWS", "AI Integration"],
-      link: "https://app.lorien.finance",
-      category: "Web Application"
+      title: 'Lorien Web App',
+      description:
+        'AI-enhanced education loan platform with intelligent form prefilling, document verification, and automated eligibility assessment. Increased conversion rates by 35% through smart UX optimization.',
+      tech: ['Next.js', 'Node.js', 'AWS', 'AI Integration'],
+      link: 'https://app.lorien.finance',
+      category: 'Web Application',
     },
     {
-      title: "Lorien Marketing Website",
-      description: "High-performance marketing website with SEO optimization, A/B testing capabilities, and analytics integration. Achieved Core Web Vitals scores in the 90s and 50% faster load times.",
-      tech: ["Next.js", "Chakra UI", "Vercel", "Analytics"],
-      link: "https://lorien.finance",
-      category: "Marketing Website"
+      title: 'Lorien Marketing Website',
+      description:
+        'High-performance marketing website with SEO optimization, A/B testing capabilities, and analytics integration. Achieved Core Web Vitals scores in the 90s and 50% faster load times.',
+      tech: ['Next.js', 'Chakra UI', 'Vercel', 'Analytics'],
+      link: 'https://lorien.finance',
+      category: 'Marketing Website',
     },
     {
-      title: "AI-Powered Portfolio",
-      description: "Modern, responsive portfolio with dynamic content, smooth animations, and integrated contact system. Built with performance and accessibility in mind.",
-      tech: ["Next.js", "Tailwind CSS", "Framer Motion", "TypeScript"],
-      category: "Personal Project"
-    }
+      title: 'AI-Powered Portfolio',
+      description:
+        'Modern, responsive portfolio with dynamic content, smooth animations, and integrated contact system. Built with performance and accessibility in mind.',
+      tech: ['Next.js', 'Tailwind CSS', 'Framer Motion', 'TypeScript'],
+      category: 'Personal Project',
+    },
   ];
 
   const aiProjects = [
     {
-      title: "Enterprise Knowledge Hub",
-      description: "Production-ready RAG system processing 10,000+ documents with 95% accuracy. Features intelligent chunking, semantic search, and multi-modal support for enterprise knowledge management.",
-      tech: ["LangChain", "OpenAI", "Streamlit", "Chroma", "FAISS", "PostgreSQL"],
-      category: "AI Tool"
+      title: 'Enterprise Knowledge Hub',
+      description:
+        'Production-ready RAG system processing 10,000+ documents with 95% accuracy. Features intelligent chunking, semantic search, and multi-modal support for enterprise knowledge management.',
+      tech: [
+        'LangChain',
+        'OpenAI',
+        'Streamlit',
+        'Chroma',
+        'FAISS',
+        'PostgreSQL',
+      ],
+      category: 'AI Tool',
     },
     {
-      title: "LinkedIn Post Generator",
-      description: "AI-powered content creation tool with brand voice analysis, trending topic integration, and engagement prediction. Generated 500+ high-performing posts with 3x engagement rates.",
-      tech: ["LangChain", "OpenAI", "Node.js", "Streamlit", "Analytics"],
-      category: "AI Tool"
-    }
+      title: 'LinkedIn Post Generator',
+      description:
+        'AI-powered content creation tool with brand voice analysis, trending topic integration, and engagement prediction. Generated 500+ high-performing posts with 3x engagement rates.',
+      tech: ['LangChain', 'OpenAI', 'Node.js', 'Streamlit', 'Analytics'],
+      category: 'AI Tool',
+    },
   ];
 
   const automationProjects = [
     {
-      title: "AI Image Generator Workflow",
-      description: "Built a sophisticated multi-agent AI system with Style, Character, and Final Prompt agents. Integrates image generation with Telegram notifications and Google Sheets logging for seamless content creation pipeline.",
-      tech: ["Multi-Agent System", "AI Image Generation", "Telegram API", "Google Sheets", "Workflow Automation"],
-      category: "AI Automation"
+      title: 'AI Image Generator Workflow',
+      description:
+        'Built a sophisticated multi-agent AI system with Style, Character, and Final Prompt agents. Integrates image generation with Telegram notifications and Google Sheets logging for seamless content creation pipeline.',
+      tech: [
+        'Multi-Agent System',
+        'AI Image Generation',
+        'Telegram API',
+        'Google Sheets',
+        'Workflow Automation',
+      ],
+      category: 'AI Automation',
     },
     {
-      title: "AI Email Analyzer & Processor",
-      description: "Developed an intelligent email processing system with AI-powered spam detection, content analysis using Gemini model, and automated summary generation with multi-platform notifications.",
-      tech: ["Gemini AI", "Email Processing", "Spam Detection", "Natural Language Processing", "Automated Workflows"],
-      category: "AI Automation"
+      title: 'AI Email Analyzer & Processor',
+      description:
+        'Developed an intelligent email processing system with AI-powered spam detection, content analysis using Gemini model, and automated summary generation with multi-platform notifications.',
+      tech: [
+        'Gemini AI',
+        'Email Processing',
+        'Spam Detection',
+        'Natural Language Processing',
+        'Automated Workflows',
+      ],
+      category: 'AI Automation',
     },
     {
-      title: "ClickUp Task Automation Workflow",
-      description: "Designed and implemented a comprehensive task management automation system with advanced workflow orchestration, reducing manual work by 60% and improving team productivity.",
-      tech: ["ClickUp API", "Webhook Integration", "Process Automation", "Workflow Design"],
-      category: "Process Automation"
-    }
+      title: 'ClickUp Task Automation Workflow',
+      description:
+        'Designed and implemented a comprehensive task management automation system with advanced workflow orchestration, reducing manual work by 60% and improving team productivity.',
+      tech: [
+        'ClickUp API',
+        'Webhook Integration',
+        'Process Automation',
+        'Workflow Design',
+      ],
+      category: 'Process Automation',
+    },
   ];
 
   return (
@@ -96,7 +129,9 @@ const Projects = () => {
         >
           <div className="flex items-center mb-8">
             <Globe className="text-blue-600 mr-3" size={28} />
-            <h3 className="text-2xl font-bold text-gray-800">Web Applications</h3>
+            <h3 className="text-2xl font-bold text-gray-800">
+              Web Applications
+            </h3>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -160,7 +195,9 @@ const Projects = () => {
         >
           <div className="flex items-center mb-8">
             <Bot className="text-purple-600 mr-3" size={28} />
-            <h3 className="text-2xl font-bold text-gray-800">AI Projects & Tools</h3>
+            <h3 className="text-2xl font-bold text-gray-800">
+              AI Projects & Tools
+            </h3>
           </div>
 
           <div className="grid md:grid-cols-2 gap-8">
@@ -211,7 +248,9 @@ const Projects = () => {
         >
           <div className="flex items-center mb-8">
             <Settings className="text-orange-600 mr-3" size={28} />
-            <h3 className="text-2xl font-bold text-gray-800">Automation & Workflows</h3>
+            <h3 className="text-2xl font-bold text-gray-800">
+              Automation & Workflows
+            </h3>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">

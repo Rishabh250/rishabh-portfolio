@@ -6,32 +6,32 @@ import { Calendar, MapPin, Building } from 'lucide-react';
 const Experience = () => {
   const experiences = [
     {
-      company: "LORIEN BUSINESS MANAGEMENT PRIVATE LIMITED",
-      position: "Software Engineer",
-      location: "New Delhi",
-      duration: "May 2023 - Current",
+      company: 'LORIEN BUSINESS MANAGEMENT PRIVATE LIMITED',
+      position: 'Software Engineer',
+      location: 'New Delhi',
+      duration: 'May 2023 - Current',
       achievements: [
-        "Architected and deployed 3 production-grade CRMs serving 5000+ users with 99.99% uptime using Next.js, Node.js, PostgreSQL, and AWS",
-        "Implemented AI-powered automation workflows reducing manual processing time by 60% and saving over 150 hours monthly",
-        "Built enterprise-grade CI/CD pipelines with CircleCI and AWS, reducing deployment time by 45% and eliminating production bugs",
-        "Led integration of LangChain and OpenAI APIs for intelligent document processing, improving data extraction accuracy by 85%",
-        "Optimized database queries and implemented caching strategies, improving application performance by 40%"
+        'Architected and deployed 3 production-grade CRMs serving 5000+ users with 99.99% uptime using Next.js, Node.js, PostgreSQL, and AWS',
+        'Implemented AI-powered automation workflows reducing manual processing time by 60% and saving over 150 hours monthly',
+        'Built enterprise-grade CI/CD pipelines with CircleCI and AWS, reducing deployment time by 45% and eliminating production bugs',
+        'Led integration of LangChain and OpenAI APIs for intelligent document processing, improving data extraction accuracy by 85%',
+        'Optimized database queries and implemented caching strategies, improving application performance by 40%',
       ],
-      color: "blue"
+      color: 'blue',
     },
     {
-      company: "Kylo Apps",
-      position: "Flutter Intern",
-      location: "New Delhi",
-      duration: "Feb 2022 - May 2022",
+      company: 'Kylo Apps',
+      position: 'Flutter Intern',
+      location: 'New Delhi',
+      duration: 'Feb 2022 - May 2022',
       achievements: [
-        "Developed cross-platform mobile applications using Flutter and Dart, contributing to 3 production releases",
-        "Collaborated with senior developers on UI/UX implementation, improving app performance by 20%",
-        "Participated in code reviews and agile development processes, gaining experience in mobile app lifecycle management",
-        "Built responsive mobile interfaces and integrated REST APIs for seamless data synchronization"
+        'Developed cross-platform mobile applications using Flutter and Dart, contributing to 3 production releases',
+        'Collaborated with senior developers on UI/UX implementation, improving app performance by 20%',
+        'Participated in code reviews and agile development processes, gaining experience in mobile app lifecycle management',
+        'Built responsive mobile interfaces and integrated REST APIs for seamless data synchronization',
       ],
-      color: "green"
-    }
+      color: 'green',
+    },
   ];
 
   return (
@@ -66,7 +66,9 @@ const Experience = () => {
               )}
 
               {/* Timeline dot */}
-              <div className={`absolute left-4 top-8 w-4 h-4 ${exp.color === 'blue' ? 'bg-blue-600' : 'bg-green-600'} rounded-full border-4 border-white shadow-lg hidden md:block`}></div>
+              <div
+                className={`absolute left-4 top-8 w-4 h-4 ${exp.color === 'blue' ? 'bg-blue-600' : 'bg-green-600'} rounded-full border-4 border-white shadow-lg hidden md:block`}
+              ></div>
 
               <div className="bg-white rounded-xl shadow-lg p-8 md:ml-16 hover:shadow-xl transition-shadow duration-300">
                 <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
@@ -102,7 +104,9 @@ const Experience = () => {
                       viewport={{ once: true }}
                       className="flex items-start space-x-3"
                     >
-                      <div className={`w-2 h-2 ${exp.color === 'blue' ? 'bg-blue-600' : 'bg-green-600'} rounded-full mt-2 flex-shrink-0`}></div>
+                      <div
+                        className={`w-2 h-2 ${exp.color === 'blue' ? 'bg-blue-600' : 'bg-green-600'} rounded-full mt-2 flex-shrink-0`}
+                      ></div>
                       <p className="text-gray-700 leading-relaxed">
                         {achievement}
                       </p>

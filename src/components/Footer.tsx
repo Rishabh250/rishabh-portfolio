@@ -15,16 +15,26 @@ const Footer = () => {
               Rishabh Bansal
             </h3>
             <p className="text-gray-300 leading-relaxed">
-              AI-Focused Full Stack Developer passionate about building scalable 
-              applications and intelligent systems that solve real-world problems.
+              AI-Focused Full Stack Developer passionate about building scalable
+              applications and intelligent systems that solve real-world
+              problems.
             </p>
           </div>
 
           {/* Quick Links */}
           <div>
-            <h4 className="text-lg font-semibold mb-4 text-white">Quick Links</h4>
+            <h4 className="text-lg font-semibold mb-4 text-white">
+              Quick Links
+            </h4>
             <nav className="space-y-2">
-              {['Home', 'About', 'Experience', 'Projects', 'Skills', 'Contact'].map((item) => (
+              {[
+                'Home',
+                'About',
+                'Experience',
+                'Projects',
+                'Skills',
+                'Contact',
+              ].map(item => (
                 <a
                   key={item}
                   href={`#${item.toLowerCase()}`}
@@ -38,7 +48,9 @@ const Footer = () => {
 
           {/* Contact Info */}
           <div>
-            <h4 className="text-lg font-semibold mb-4 text-white">Get In Touch</h4>
+            <h4 className="text-lg font-semibold mb-4 text-white">
+              Get In Touch
+            </h4>
             <div className="space-y-3">
               <a
                 href="mailto:rishu25bansal@gmail.com"
@@ -47,7 +59,7 @@ const Footer = () => {
                 <Mail size={18} />
                 <span>rishu25bansal@gmail.com</span>
               </a>
-              
+
               <a
                 href="https://linkedin.com/in/rishabh-bansal-5a08b496"
                 target="_blank"
@@ -67,7 +79,7 @@ const Footer = () => {
             <p className="text-gray-400 text-sm mb-4 md:mb-0">
               © {currentYear} Rishabh Bansal. All rights reserved.
             </p>
-            
+
             <div className="flex items-center space-x-2 text-gray-400 text-sm">
               <span>Made with</span>
               <Heart className="text-red-500" size={16} fill="currentColor" />
