@@ -32,10 +32,7 @@ export const metadata: Metadata = {
   authors: [{ name: 'Rishabh Bansal' }],
   robots: 'index, follow',
   icons: {
-    icon: [
-      { url: '/favicon.svg', type: 'image/svg+xml' },
-      { url: '/favicon.ico', sizes: '32x32' },
-    ],
+    icon: [{ url: '/favicon.ico', sizes: '32x32' }],
     apple: '/apple-touch-icon.png',
   },
   openGraph: {
@@ -47,8 +44,8 @@ export const metadata: Metadata = {
     images: [
       {
         url: '/favicon.ico',
-        width: 40,
-        height: 40,
+        width: 32,
+        height: 32,
         alt: 'Rishabh Bansal Logo',
       },
     ],
