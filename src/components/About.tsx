@@ -46,13 +46,13 @@ const About = () => {
             viewport={{ once: true }}
           >
             <p className="text-lg text-gray-600 leading-relaxed mb-6">
-              I'm a passionate AI-focused Full Stack Developer with 2+ years of experience building 
+              I&apos;m a passionate AI-focused Full Stack Developer with 2+ years of experience building 
               intelligent, scalable applications. My expertise spans from traditional web development 
               to cutting-edge AI integration, creating solutions that transform how businesses operate.
             </p>
             
             <p className="text-lg text-gray-600 leading-relaxed mb-6">
-              Currently at Lorien Business Management, I've engineered production-grade systems serving 
+              Currently at Lorien Business Management, I&apos;ve engineered production-grade systems serving 
               thousands of users with 99.99% uptime. My work has directly contributed to 45% efficiency 
               improvements and automated processes that save over 150 hours monthly across teams.
             </p>

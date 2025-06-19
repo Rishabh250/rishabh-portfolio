@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { ExternalLink, Github, Globe, Bot, Settings } from 'lucide-react';
+import { ExternalLink, Globe, Bot, Settings } from 'lucide-react';
 
 const Projects = () => {
   const webProjects = [
@@ -45,12 +45,6 @@ const Projects = () => {
       title: "LinkedIn Post Generator",
       description: "AI-powered content creation tool with brand voice analysis, trending topic integration, and engagement prediction. Generated 500+ high-performing posts with 3x engagement rates.",
       tech: ["LangChain", "OpenAI", "Node.js", "Streamlit", "Analytics"],
-      category: "AI Tool"
-    },
-    {
-      title: "Smart Document Processor",
-      description: "Intelligent document analysis system using multi-modal AI for contract review, compliance checking, and automated data extraction with 90% accuracy improvement.",
-      tech: ["OpenAI", "LangChain", "OCR", "NLP", "Python", "FastAPI"],
       category: "AI Tool"
     }
   ];
@@ -104,7 +98,7 @@ const Projects = () => {
             <Globe className="text-blue-600 mr-3" size={28} />
             <h3 className="text-2xl font-bold text-gray-800">Web Applications</h3>
           </div>
-          
+
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {webProjects.map((project, index) => (
               <motion.div
@@ -120,15 +114,15 @@ const Projects = () => {
                     {project.category}
                   </span>
                 </div>
-                
+
                 <h4 className="text-xl font-bold text-gray-800 mb-3 group-hover:text-blue-600 transition-colors">
                   {project.title}
                 </h4>
-                
+
                 <p className="text-gray-600 mb-4 text-sm leading-relaxed">
                   {project.description}
                 </p>
-                
+
                 <div className="flex flex-wrap gap-2 mb-4">
                   {project.tech.map((tech, techIndex) => (
                     <span
@@ -139,7 +133,7 @@ const Projects = () => {
                     </span>
                   ))}
                 </div>
-                
+
                 <div className="flex space-x-3">
                   <a
                     href={project.link}
@@ -168,7 +162,7 @@ const Projects = () => {
             <Bot className="text-purple-600 mr-3" size={28} />
             <h3 className="text-2xl font-bold text-gray-800">AI Projects & Tools</h3>
           </div>
-          
+
           <div className="grid md:grid-cols-2 gap-8">
             {aiProjects.map((project, index) => (
               <motion.div
@@ -184,15 +178,15 @@ const Projects = () => {
                     {project.category}
                   </span>
                 </div>
-                
+
                 <h4 className="text-xl font-bold text-gray-800 mb-3 group-hover:text-purple-600 transition-colors">
                   {project.title}
                 </h4>
-                
+
                 <p className="text-gray-600 mb-4 text-sm leading-relaxed">
                   {project.description}
                 </p>
-                
+
                 <div className="flex flex-wrap gap-2">
                   {project.tech.map((tech, techIndex) => (
                     <span
@@ -219,7 +213,7 @@ const Projects = () => {
             <Settings className="text-orange-600 mr-3" size={28} />
             <h3 className="text-2xl font-bold text-gray-800">Automation & Workflows</h3>
           </div>
-          
+
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {automationProjects.map((project, index) => (
               <motion.div
@@ -235,15 +229,15 @@ const Projects = () => {
                     {project.category}
                   </span>
                 </div>
-                
+
                 <h4 className="text-xl font-bold text-gray-800 mb-3 group-hover:text-orange-600 transition-colors">
                   {project.title}
                 </h4>
-                
+
                 <p className="text-gray-600 mb-4 text-sm leading-relaxed">
                   {project.description}
                 </p>
-                
+
                 <div className="flex flex-wrap gap-2">
                   {project.tech.map((tech, techIndex) => (
                     <span

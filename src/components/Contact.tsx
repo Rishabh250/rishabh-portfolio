@@ -67,7 +67,7 @@ const Contact = () => {
           </h2>
           <div className="w-24 h-1 bg-blue-600 mx-auto mb-8"></div>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Ready to build the future together? Let's discuss how I can help transform your ideas into intelligent, scalable solutions that drive real business value.
+            Ready to build the future together? Let&apos;s discuss how I can help transform your ideas into intelligent, scalable solutions that drive real business value.
           </p>
         </motion.div>
 
@@ -157,7 +157,7 @@ const Contact = () => {
                   <MessageSquare className="text-white" size={28} />
                 </motion.div>
                 <h3 className="text-3xl font-bold text-gray-800 mb-2">Send a Message</h3>
-                <p className="text-gray-600">I'd love to hear from you. Let's start a conversation!</p>
+                <p className="text-gray-600">I&apos;d love to hear from you. Let&apos;s start a conversation!</p>
               </div>
 
               <form onSubmit={handleSubmit} className="space-y-6">
