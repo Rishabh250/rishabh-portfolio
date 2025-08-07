@@ -22,9 +22,9 @@ const Hero = () => {
   }, []);
 
   const achievements = [
-    { number: '10+', label: 'Production Apps', icon: '🚀', color: 'blue' },
-    { number: '45%', label: 'Efficiency Boost', icon: '⚡', color: 'green' },
-    { number: '150+', label: 'Hours Saved/Month', icon: '⏰', color: 'purple' },
+    { number: '2+', label: 'Years Experience', icon: '🚀', color: 'blue' },
+    { number: '400+', label: 'Hours Saved/Month', icon: '⚡', color: 'green' },
+    { number: '30%', label: 'MQL Improvement', icon: '📈', color: 'purple' },
     { number: '99.99%', label: 'Uptime', icon: '🎯', color: 'orange' },
   ];
 
@@ -161,7 +161,7 @@ const Hero = () => {
               transition={{ duration: 4, repeat: Infinity }}
               className="dark:text-gray-100"
             >
-              AI Full Stack Developer
+              Full Stack Engineer
             </motion.span>
           </motion.p>
 
@@ -171,33 +171,33 @@ const Hero = () => {
             transition={{ delay: 0.6 }}
             className="text-lg md:text-xl text-gray-600 dark:text-gray-400 max-w-4xl mx-auto leading-relaxed"
           >
-            Transforming ideas into intelligent solutions with cutting-edge{' '}
+            Building scalable, secure web and mobile applications with{' '}
             <motion.span
               whileHover={{ scale: 1.1 }}
               className="text-blue-600 dark:text-blue-400 font-bold cursor-default"
             >
-              AI/ML
-            </motion.span>
-            ,{' '}
-            <motion.span
-              whileHover={{ scale: 1.1 }}
-              className="text-green-600 dark:text-green-400 font-bold cursor-default"
-            >
-              Full Stack Development
+              Node.js
             </motion.span>
             ,{' '}
             <motion.span
               whileHover={{ scale: 1.1 }}
               className="text-purple-600 dark:text-purple-400 font-bold cursor-default"
             >
-              Cloud Architecture
+              React.js
+            </motion.span>
+            ,{' '}
+            <motion.span
+              whileHover={{ scale: 1.1 }}
+              className="text-green-600 dark:text-green-400 font-bold cursor-default"
+            >
+              AWS
             </motion.span>
             {' & '}
             <motion.span
               whileHover={{ scale: 1.1 }}
               className="text-orange-600 dark:text-orange-400 font-bold cursor-default"
             >
-              DevOps
+              AI Tools
             </motion.span>
           </motion.p>
         </motion.div>
@@ -334,7 +334,7 @@ const Hero = () => {
               backgroundColor: 'rgba(59, 130, 246, 0.1)',
             }}
             whileTap={{ scale: 0.95 }}
-            href="https://linkedin.com/in/rishabh-bansal-5a08b496"
+            href="https://linkedin.com/in/full-stack-developer-rishabh"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center space-x-3 border-2 border-blue-600 dark:border-blue-400 text-blue-600 dark:text-blue-400 px-10 py-5 rounded-full font-semibold backdrop-blur-sm transition-all duration-300"

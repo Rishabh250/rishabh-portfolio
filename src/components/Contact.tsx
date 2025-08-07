@@ -1,19 +1,30 @@
 'use client';
 
-import { motion } from 'framer-motion';
+import { motion, useScroll, useTransform } from 'framer-motion';
 import {
-    FileText,
-    Linkedin,
-    Mail,
-    MapPin,
-    MessageSquare,
-    Phone,
-    Send,
-    User,
+  FileText,
+  Linkedin,
+  Mail,
+  MapPin,
+  MessageSquare,
+  Phone,
+  Send,
+  User,
 } from 'lucide-react';
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 
 const Contact = () => {
+  const ref = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ['start end', 'end start'],
+  });
+
+  const yBackground = useTransform(scrollYProgress, [0, 1], [0, -150]);
+  const yContent = useTransform(scrollYProgress, [0, 1], [50, -50]);
+  const scale = useTransform(scrollYProgress, [0, 0.5, 1], [0.95, 1, 1.05]);
+  const rotate = useTransform(scrollYProgress, [0, 1], [0, 5]);
+
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -46,29 +57,43 @@ const Contact = () => {
     {
       icon: <Phone className="text-green-600" size={24} />,
       title: 'Phone',
-      value: '+91 8923425511',
+      value: '+91-8923425511',
       link: 'tel:+918923425511',
     },
     {
       icon: <MapPin className="text-red-600" size={24} />,
       title: 'Location',
-      value: 'Bulandshahr, Uttar Pradesh, India – 203001',
+      value: 'Bulandshahr, Uttar Pradesh',
       link: null,
     },
     {
       icon: <Linkedin className="text-blue-700" size={24} />,
       title: 'LinkedIn',
-      value: 'linkedin.com/in/rishabh-bansal-5a08b496',
-      link: 'https://linkedin.com/in/rishabh-bansal-5a08b496',
+      value: 'linkedin.com/in/full-stack-developer-rishabh',
+      link: 'https://linkedin.com/in/full-stack-developer-rishabh',
     },
   ];
 
   return (
     <section
+      ref={ref}
       id="contact"
-      className="py-20 bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-gray-800 dark:to-gray-700"
+      className="py-20 bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-gray-800 dark:to-gray-700 relative overflow-hidden"
     >
-      <div className="container mx-auto px-6">
+      {/* Parallax Background Elements */}
+      <motion.div
+        style={{ y: yBackground, rotate }}
+        className="absolute inset-0 opacity-20"
+      >
+        <div className="absolute top-24 left-24 w-80 h-80 bg-gradient-to-r from-blue-400/30 to-purple-400/30 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-24 right-24 w-64 h-64 bg-gradient-to-r from-indigo-400/30 to-pink-400/30 rounded-full blur-3xl"></div>
+        <div className="absolute top-1/3 right-1/3 w-48 h-48 bg-gradient-to-r from-cyan-400/30 to-blue-400/30 rounded-full blur-3xl"></div>
+      </motion.div>
+
+      <motion.div
+        style={{ y: yContent, scale }}
+        className="container mx-auto px-6 relative z-10"
+      >
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -130,7 +155,9 @@ const Contact = () => {
                         {info.value}
                       </a>
                     ) : (
-                      <p className="text-gray-600 dark:text-gray-400">{info.value}</p>
+                      <p className="text-gray-600 dark:text-gray-400">
+                        {info.value}
+                      </p>
                     )}
                   </div>
                 </motion.div>
@@ -144,25 +171,33 @@ const Contact = () => {
               viewport={{ once: true }}
               className="mt-8 p-6 bg-white dark:bg-gray-800 rounded-lg shadow-md"
             >
-              <h4 className="font-semibold text-gray-800 dark:text-gray-100 mb-3">Quick Stats</h4>
+              <h4 className="font-semibold text-gray-800 dark:text-gray-100 mb-3">
+                Quick Stats
+              </h4>
               <div className="grid grid-cols-3 gap-4">
                 <div className="text-center p-3 bg-gray-50 dark:bg-gray-700 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-600 transition-colors duration-200">
                   <div className="text-2xl font-bold text-blue-600 mb-1">
-                    10+
+                    400+
                   </div>
-                  <div className="text-sm text-gray-600 dark:text-gray-400">Apps Deployed</div>
+                  <div className="text-sm text-gray-600 dark:text-gray-400">
+                    Hours Saved/Month
+                  </div>
                 </div>
                 <div className="text-center p-3 bg-gray-50 dark:bg-gray-700 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-600 transition-colors duration-200">
                   <div className="text-2xl font-bold text-purple-600 mb-1">
-                    500+
+                    30%
                   </div>
-                  <div className="text-sm text-gray-600 dark:text-gray-400">Users Served</div>
+                  <div className="text-sm text-gray-600 dark:text-gray-400">
+                    MQL Improvement
+                  </div>
                 </div>
                 <div className="text-center p-3 bg-gray-50 dark:bg-gray-700 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-600 transition-colors duration-200">
                   <div className="text-2xl font-bold text-orange-600 mb-1">
-                    150+
+                    99.9%
                   </div>
-                  <div className="text-sm text-gray-600 dark:text-gray-400">Hours Saved/Month</div>
+                  <div className="text-sm text-gray-600 dark:text-gray-400">
+                    Uptime
+                  </div>
                 </div>
               </div>
             </motion.div>
@@ -337,7 +372,7 @@ const Contact = () => {
             </div>
           </motion.div>
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 };

@@ -1,36 +1,57 @@
 'use client';
 
-import { motion } from 'framer-motion';
+import { motion, useScroll, useTransform } from 'framer-motion';
 import { Brain, Code, Mail, MapPin, Rocket } from 'lucide-react';
+import { useRef } from 'react';
 
 const About = () => {
+  const ref = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ['start end', 'end start'],
+  });
+
+  const y = useTransform(scrollYProgress, [0, 1], [100, -100]);
+  const opacity = useTransform(scrollYProgress, [0, 0.2, 0.8, 1], [0, 1, 1, 0]);
+  const scale = useTransform(scrollYProgress, [0, 0.5, 1], [0.8, 1, 1.2]);
+
   const highlights = [
     {
       icon: <Code className="text-blue-400" size={32} />,
       title: 'Full Stack Development',
       description:
-        '2+ years building scalable web applications with Node.js, Next.js, and modern technologies',
+        '2+ years building scalable web and mobile applications with React.js, Node.js, Next.js, and modern development practices',
     },
     {
       icon: <Brain className="text-green-400" size={32} />,
-      title: 'AI & Machine Learning',
+      title: 'AI & Automation',
       description:
-        'Specialized in LangChain, OpenAI API, and building intelligent RAG systems',
+        'Expert in LangChain, OpenAI APIs for lead qualification automation, boosting MQLs by 30% and reducing sales cycles by 15%',
     },
     {
       icon: <Rocket className="text-purple-400" size={32} />,
-      title: 'Performance Optimization',
+      title: 'Cloud & DevOps',
       description:
-        'Proven track record of reducing deployment time by 30% and increasing efficiency by 40%',
+        'AWS infrastructure management with CircleCI deployment pipelines, cutting release times by 50% and improving system efficiency',
     },
   ];
 
   return (
     <section
+      ref={ref}
       id="about"
-      className="py-20 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900"
+      className="py-20 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 relative overflow-hidden"
     >
-      <div className="container mx-auto px-6">
+      {/* Parallax Background Elements */}
+      <motion.div style={{ y }} className="absolute inset-0 opacity-10">
+        <div className="absolute top-20 left-10 w-32 h-32 bg-blue-500 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-20 right-10 w-48 h-48 bg-purple-500 rounded-full blur-3xl"></div>
+      </motion.div>
+
+      <motion.div
+        style={{ opacity, scale }}
+        className="container mx-auto px-6 relative z-10"
+      >
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -55,8 +76,8 @@ const About = () => {
             About Me
           </h2>
           <p className="text-lg text-gray-400 max-w-2xl mx-auto">
-            Passionate developer crafting intelligent solutions for
-            tomorrow&apos;s challenges
+            Full Stack Developer with over 2 years of hands-on experience
+            architecting scalable, secure web and mobile applications
           </p>
         </motion.div>
 
@@ -68,25 +89,30 @@ const About = () => {
             viewport={{ once: true }}
           >
             <p className="text-lg text-gray-300 leading-relaxed mb-6">
-              I&apos;m a passionate AI-focused Full Stack Developer with 2+
-              years of experience building intelligent, scalable applications.
-              My expertise spans from traditional web development to
-              cutting-edge AI integration, creating solutions that transform how
-              businesses operate.
+              I&apos;m a passionate Full Stack Developer with over 2 years of
+              hands-on experience architecting scalable, secure web and mobile
+              applications. Highly skilled in deploying robust solutions using
+              React, Node.js, AWS, and AI frameworks. I specialize in enhancing
+              operational efficiency, driving workflow automation, ensuring
+              regulatory compliance, and delivering measurable business value
+              through clean code and rapid iteration.
             </p>
 
             <p className="text-lg text-gray-300 leading-relaxed mb-6">
-              Currently at Lorien Business Management, I&apos;ve engineered
-              production-grade systems serving thousands of users with 99.99%
-              uptime. My work has directly contributed to 45% efficiency
-              improvements and automated processes that save over 150 hours
-              monthly across teams.
+              Currently at Lorien Business Management Pvt Ltd, I&apos;ve
+              collaborated with cross-functional teams to build a CRM platform
+              automating sales operations and internal workflows, saving 400+
+              hours monthly and streamlining business processes. I&apos;ve
+              designed authentication and lead assignment services using Redis
+              and BullMQ for scalable task processing.
             </p>
 
             <p className="text-lg text-gray-300 leading-relaxed mb-6">
-              I specialize in bridging the gap between complex AI technologies
-              and practical business solutions, turning ambitious ideas into
-              robust, maintainable applications that deliver real value.
+              My expertise includes improving database performance through
+              materialized views and strategic indexes, integrating LangChain
+              and OpenAI APIs for intelligent automation, and building CircleCI
+              deployment pipelines for AWS EC2 infrastructure while managing RDS
+              and S3 storage for optimized data handling.
             </p>
 
             <div className="flex flex-wrap gap-4">
@@ -151,7 +177,7 @@ const About = () => {
             ))}
           </motion.div>
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 };

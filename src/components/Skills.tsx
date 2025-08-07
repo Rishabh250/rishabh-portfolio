@@ -1,52 +1,50 @@
 'use client';
 
-import { motion } from 'framer-motion';
-import { Code, Database, Cloud, Brain, Cog, Wrench } from 'lucide-react';
+import { motion, useScroll, useTransform } from 'framer-motion';
+import { Brain, Cloud, Code, Cog, Database, Wrench } from 'lucide-react';
+import { useRef } from 'react';
 
 const Skills = () => {
+  const ref = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ['start end', 'end start'],
+  });
+
+  const ySkills = useTransform(scrollYProgress, [0, 1], [100, -100]);
+  const yEducation = useTransform(scrollYProgress, [0, 1], [-50, 50]);
+  const rotate = useTransform(scrollYProgress, [0, 1], [0, 180]);
+  const opacity = useTransform(
+    scrollYProgress,
+    [0, 0.2, 0.8, 1],
+    [0.3, 1, 1, 0.3],
+  );
+
   const skillCategories = [
     {
       icon: <Code className="text-blue-600" size={32} />,
-      title: 'Programming Languages',
-      skills: ['JavaScript', 'Python', 'TypeScript', 'Go Lang'],
-      color: 'blue',
-    },
-    {
-      icon: <Code className="text-green-600" size={32} />,
-      title: 'Frontend Development',
+      title: 'Languages/Frameworks',
       skills: [
-        'React.js',
-        'Next.js',
-        'Flutter',
-        'Material UI',
-        'Chakra UI',
-        'HTML5',
-        'CSS3',
-      ],
-      color: 'green',
-    },
-    {
-      icon: <Database className="text-purple-600" size={32} />,
-      title: 'Backend Development',
-      skills: [
+        'JavaScript',
+        'TypeScript',
         'Node.js',
         'Express.js',
-        'REST APIs',
-        'Microservices Architecture',
+        'React.js',
+        'Next.js',
       ],
-      color: 'purple',
+      color: 'blue',
     },
     {
       icon: <Database className="text-orange-600" size={32} />,
       title: 'Databases',
-      skills: ['PostgreSQL', 'MongoDB', 'Vector Databases (Chroma, FAISS)'],
+      skills: ['PostgreSQL', 'MongoDB', 'Redis', 'Database Optimization'],
       color: 'orange',
     },
     {
       icon: <Cloud className="text-indigo-600" size={32} />,
-      title: 'Cloud & DevOps',
+      title: 'DevOps/Cloud',
       skills: [
-        'AWS (EC2, RDS, S3, Lambda)',
+        'AWS (EC2, RDS, S3)',
         'Docker',
         'CircleCI',
         'Vercel',
@@ -56,33 +54,56 @@ const Skills = () => {
     },
     {
       icon: <Brain className="text-pink-600" size={32} />,
-      title: 'AI & Machine Learning',
+      title: 'AI & Automation',
       skills: [
         'LangChain',
         'OpenAI API',
         'Gemini API',
-        'Prompt Engineering',
-        'RAG Systems',
+        'n8n',
+        'Workflow Automation',
       ],
       color: 'pink',
     },
     {
       icon: <Cog className="text-yellow-600" size={32} />,
-      title: 'Automation Tools',
-      skills: ['n8n', 'Workflow Automation', 'Process Optimization'],
+      title: 'Tools',
+      skills: ['Git', 'JIRA', 'ClickUp', 'Material UI', 'Chakra UI'],
       color: 'yellow',
     },
     {
-      icon: <Wrench className="text-gray-600" size={32} />,
-      title: 'Development Tools',
-      skills: ['Git', 'GitHub', 'Agile Methodologies', 'Code Review'],
-      color: 'gray',
+      icon: <Wrench className="text-purple-600" size={32} />,
+      title: 'Specializations',
+      skills: [
+        'Microservices Architecture',
+        'REST APIs',
+        'BullMQ',
+        'TLS/SSL Security',
+        'Performance Optimization',
+      ],
+      color: 'purple',
     },
   ];
 
   return (
-    <section id="skills" className="py-20 bg-gray-50 dark:bg-gray-800">
-      <div className="container mx-auto px-6">
+    <section
+      ref={ref}
+      id="skills"
+      className="py-20 bg-gray-50 dark:bg-gray-800 relative overflow-hidden"
+    >
+      {/* Parallax Background Elements */}
+      <motion.div
+        style={{ y: ySkills, rotate }}
+        className="absolute inset-0 opacity-10"
+      >
+        <div className="absolute top-20 left-20 w-40 h-40 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-20 right-20 w-56 h-56 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full blur-3xl"></div>
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-32 h-32 bg-gradient-to-r from-yellow-500 to-orange-500 rounded-full blur-3xl"></div>
+      </motion.div>
+
+      <motion.div
+        style={{ opacity }}
+        className="container mx-auto px-6 relative z-10"
+      >
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -95,8 +116,8 @@ const Skills = () => {
           </h2>
           <div className="w-24 h-1 bg-blue-600 dark:bg-blue-400 mx-auto mb-8"></div>
           <p className="text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
-            Comprehensive expertise across modern web technologies, cloud
-            platforms, and cutting-edge AI tools
+            Specialized in backend development, cloud infrastructure, and
+            database optimization for scalable applications
           </p>
         </motion.div>
 
@@ -150,6 +171,7 @@ const Skills = () => {
 
         {/* Education Section */}
         <motion.div
+          style={{ y: yEducation }}
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
@@ -174,7 +196,7 @@ const Skills = () => {
                     Master&apos;s Degree
                   </div>
                   <span className="text-gray-500 dark:text-gray-400 text-sm">
-                    Jun 2021 - Jun 2023
+                    Jun 2023
                   </span>
                 </div>
                 <h4 className="text-xl font-bold text-gray-800 dark:text-gray-100 mb-2">
@@ -184,8 +206,12 @@ const Skills = () => {
                   Sharda University &ndash; Greater Noida
                 </p>
                 <div className="flex items-center space-x-2">
-                  <span className="text-sm text-gray-600 dark:text-gray-400">CGPA:</span>
-                  <span className="text-lg font-bold text-blue-600 dark:text-blue-400">7.9</span>
+                  <span className="text-sm text-gray-600 dark:text-gray-400">
+                    CGPA:
+                  </span>
+                  <span className="text-lg font-bold text-blue-600 dark:text-blue-400">
+                    7.9
+                  </span>
                 </div>
               </motion.div>
 
@@ -202,7 +228,7 @@ const Skills = () => {
                     Bachelor&apos;s Degree
                   </div>
                   <span className="text-gray-500 dark:text-gray-400 text-sm">
-                    Jun 2018 - Jun 2021
+                    Jun 2021
                   </span>
                 </div>
                 <h4 className="text-xl font-bold text-gray-800 dark:text-gray-100 mb-2">
@@ -212,14 +238,18 @@ const Skills = () => {
                   Sharda University &ndash; Greater Noida
                 </p>
                 <div className="flex items-center space-x-2">
-                  <span className="text-sm text-gray-600 dark:text-gray-400">CGPA:</span>
-                  <span className="text-lg font-bold text-green-600 dark:text-green-400">7.3</span>
+                  <span className="text-sm text-gray-600 dark:text-gray-400">
+                    CGPA:
+                  </span>
+                  <span className="text-lg font-bold text-green-600 dark:text-green-400">
+                    7.3
+                  </span>
                 </div>
               </motion.div>
             </div>
           </div>
         </motion.div>
-      </div>
+      </motion.div>
     </section>
   );
 };

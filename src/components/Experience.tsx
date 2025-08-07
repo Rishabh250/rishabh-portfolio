@@ -1,45 +1,60 @@
 'use client';
 
-import { motion } from 'framer-motion';
+import { motion, useScroll, useTransform } from 'framer-motion';
 import { Award, Building, Calendar, MapPin } from 'lucide-react';
+import { useRef } from 'react';
 
 const Experience = () => {
+  const ref = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ['start end', 'end start'],
+  });
+
+  const yBackground = useTransform(scrollYProgress, [0, 1], [0, -100]);
+  const yContent = useTransform(scrollYProgress, [0, 1], [50, -50]);
+  const opacity = useTransform(
+    scrollYProgress,
+    [0, 0.2, 0.8, 1],
+    [0.5, 1, 1, 0.5],
+  );
+
   const experiences = [
     {
-      company: 'Lorien Business Management Private Limited',
+      company: 'Lorien Business Management Pvt Ltd',
       position: 'Software Engineer',
       location: 'New Delhi',
-      duration: 'May 2023 - Current',
+      duration: 'May 2023 - Present',
       achievements: [
-        'Architected and deployed 3 production-grade CRMs serving 500+ users with 99.99% uptime using Next.js, Node.js, PostgreSQL, and AWS',
-        'Implemented AI-powered automation workflows reducing manual processing time by 60% and saving over 150 hours monthly',
-        'Built enterprise-grade CI/CD pipelines with CircleCI and AWS, reducing deployment time by 45% and eliminating production bugs',
-        'Led integration of LangChain and OpenAI APIs for intelligent document processing, improving data extraction accuracy by 85%',
-        'Optimized database queries and implemented caching strategies, improving application performance by 40%',
+        'Collaborated with cross-functional teams to build a CRM platform automating sales operations and internal workflows, saving 400+ hours monthly and streamlining business processes',
+        'Designed authentication and lead assignment services using Redis and BullMQ for scalable task processing, ensuring reliable distributed job handling and optimal system performance',
+        'Improved database performance by creating materialized views and strategic indexes, significantly improving complex query response times and overall system efficiency',
+        'Integrated LangChain and OpenAI APIs to automate lead qualification processes, boosting Marketing Qualified Leads (MQLs) by 30% and reducing sales cycles by 15%',
+        'Built CircleCI deployment pipelines for AWS EC2 infrastructure, cutting release times by 50% while managing RDS and S3 storage for optimized data handling and backend efficiency',
       ],
       color: 'blue',
-    },
-    {
-      company: 'Kylo Apps',
-      position: 'Flutter Intern',
-      location: 'New Delhi',
-      duration: 'Feb 2022 - May 2022',
-      achievements: [
-        'Developed cross-platform mobile applications using Flutter and Dart, contributing to 3 production releases',
-        'Collaborated with senior developers on UI/UX implementation, improving app performance by 20%',
-        'Participated in code reviews and agile development processes, gaining experience in mobile app lifecycle management',
-        'Built responsive mobile interfaces and integrated REST APIs for seamless data synchronization',
-      ],
-      color: 'green',
     },
   ];
 
   return (
     <section
+      ref={ref}
       id="experience"
-      className="py-20 bg-gradient-to-br from-gray-50 via-blue-50/30 to-purple-50/30 dark:from-gray-900 dark:via-gray-800 dark:to-gray-700"
+      className="py-20 bg-gradient-to-br from-gray-50 via-blue-50/30 to-purple-50/30 dark:from-gray-900 dark:via-gray-800 dark:to-gray-700 relative overflow-hidden"
     >
-      <div className="container mx-auto px-6">
+      {/* Parallax Background Elements */}
+      <motion.div
+        style={{ y: yBackground }}
+        className="absolute inset-0 opacity-20"
+      >
+        <div className="absolute top-32 right-20 w-64 h-64 bg-gradient-to-r from-blue-400/20 to-purple-400/20 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-32 left-20 w-48 h-48 bg-gradient-to-r from-purple-400/20 to-pink-400/20 rounded-full blur-3xl"></div>
+      </motion.div>
+
+      <motion.div
+        style={{ y: yContent, opacity }}
+        className="container mx-auto px-6 relative z-10"
+      >
         {/* Enhanced Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -159,7 +174,7 @@ const Experience = () => {
             </motion.div>
           ))}
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 };

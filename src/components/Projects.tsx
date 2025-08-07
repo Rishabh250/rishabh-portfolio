@@ -1,40 +1,58 @@
 'use client';
 
-import { motion } from 'framer-motion';
+import { motion, useScroll, useTransform } from 'framer-motion';
 import { Bot, ExternalLink, Globe, Settings } from 'lucide-react';
+import { useRef } from 'react';
 
 const Projects = () => {
-  const webProjects = [
+  const ref = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ['start end', 'end start'],
+  });
+
+  const yBackground = useTransform(scrollYProgress, [0, 1], [-50, 50]);
+  const rotateX = useTransform(scrollYProgress, [0, 1], [0, 360]);
+  const scale = useTransform(scrollYProgress, [0, 0.5, 1], [0.9, 1, 0.9]);
+
+  const backendProjects = [
     {
-      title: 'LoFi CRM',
+      title: 'LoFi CRM – CRM Platform for Internal Sales Automation',
       description:
-        'Enterprise-grade CRM platform serving 500+ users with advanced analytics, automated workflows, and real-time collaboration features. Achieved 99.99% uptime with scalable architecture.',
-      tech: ['Next.js', 'Node.js', 'PostgreSQL', 'AWS', 'CircleCI', 'Redis'],
+        'Engineered an enterprise CRM platform with modular microservices design and fault-tolerant architecture, eliminating customer data loss and enabling seamless scalability. Implemented end-to-end security infrastructure with TLS/SSL encryption and role-based access controls, achieving full compliance with industry security standards.',
+      tech: [
+        'Node.js',
+        'Next.js',
+        'Material UI',
+        'AWS',
+        'CircleCI',
+        'PostgreSQL',
+        'Redis',
+      ],
       link: 'https://lofiadmin.lorien.finance',
-      category: 'Web Application',
+      category: 'Enterprise CRM',
     },
     {
-      title: 'Lorien Web App',
+      title: 'Lorien Web App – Education Loan Portal',
       description:
-        'AI-enhanced education loan platform with intelligent form prefilling, document verification, and automated eligibility assessment. Increased conversion rates by 35% through smart UX optimization.',
-      tech: ['Next.js', 'Node.js', 'AWS', 'AI Integration'],
+        'Constructed a highly available loan portal with end-to-end TLS/SSL encryption, ensuring secure data transmission and client privacy. Developed RESTful APIs with robust error handling and PostgreSQL/MongoDB integration, enabling seamless traffic surge management and maintaining system stability under high load.',
+      tech: ['Node.js', 'Next.js', 'AWS', 'PostgreSQL', 'MongoDB', 'REST APIs'],
       link: 'https://app.lorien.finance',
-      category: 'Web Application',
+      category: 'Financial Portal',
     },
     {
-      title: 'Lorien Marketing Website',
+      title: 'Lorien Website',
       description:
-        'High-performance marketing website with SEO optimization, A/B testing capabilities, and analytics integration. Achieved Core Web Vitals scores in the 90s and 50% faster load times.',
-      tech: ['Next.js', 'Chakra UI', 'Vercel', 'Analytics'],
+        'Built a high-performance, responsive website with 99.9% uptime and mobile-optimized design for seamless user experience across all devices. Enhanced frontend performance reducing page load times by 50% and increasing user engagement by 40% through efficient code splitting and caching strategies.',
+      tech: [
+        'Next.js',
+        'Chakra UI',
+        'Vercel',
+        'Performance Optimization',
+        'SEO',
+      ],
       link: 'https://lorien.finance',
       category: 'Marketing Website',
-    },
-    {
-      title: 'AI-Powered Portfolio',
-      description:
-        'Modern, responsive portfolio with dynamic content, smooth animations, and integrated contact system. Built with performance and accessibility in mind.',
-      tech: ['Next.js', 'Tailwind CSS', 'Framer Motion', 'TypeScript'],
-      category: 'Personal Project',
     },
   ];
 
@@ -104,8 +122,24 @@ const Projects = () => {
   ];
 
   return (
-    <section id="projects" className="py-20 bg-white dark:bg-gray-900">
-      <div className="container mx-auto px-6">
+    <section
+      ref={ref}
+      id="projects"
+      className="py-20 bg-white dark:bg-gray-900 relative overflow-hidden"
+    >
+      {/* Parallax Background Elements */}
+      <motion.div
+        style={{ y: yBackground, rotateX }}
+        className="absolute inset-0 opacity-5"
+      >
+        <div className="absolute top-40 left-32 w-96 h-96 bg-gradient-conic from-blue-500 via-purple-500 to-pink-500 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-40 right-32 w-72 h-72 bg-gradient-conic from-green-500 via-blue-500 to-purple-500 rounded-full blur-3xl"></div>
+      </motion.div>
+
+      <motion.div
+        style={{ scale }}
+        className="container mx-auto px-6 relative z-10"
+      >
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -119,7 +153,7 @@ const Projects = () => {
           <div className="w-24 h-1 bg-blue-600 dark:bg-blue-400 mx-auto mb-8"></div>
         </motion.div>
 
-        {/* Web Projects */}
+        {/* Backend Projects */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -130,12 +164,12 @@ const Projects = () => {
           <div className="flex items-center mb-8">
             <Globe className="text-blue-600 mr-3" size={28} />
             <h3 className="text-2xl font-bold text-gray-800 dark:text-gray-100">
-              Web Applications
+              Backend Projects
             </h3>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {webProjects.map((project, index) => (
+            {backendProjects.map((project, index) => (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, y: 30 }}
@@ -169,23 +203,25 @@ const Projects = () => {
                   ))}
                 </div>
 
-                <div className="flex space-x-3">
-                  <a
-                    href={project.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center space-x-1 text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 text-sm font-medium"
-                  >
-                    <ExternalLink size={16} />
-                    <span>Live Demo</span>
-                  </a>
-                </div>
+                {project.link && (
+                  <div className="flex space-x-3">
+                    <a
+                      href={project.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center space-x-1 text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 text-sm font-medium"
+                    >
+                      <ExternalLink size={16} />
+                      <span>Live Demo</span>
+                    </a>
+                  </div>
+                )}
               </motion.div>
             ))}
           </div>
         </motion.div>
 
-        {/* AI Projects */}
+        {/* AI & Backend Tools */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -196,7 +232,7 @@ const Projects = () => {
           <div className="flex items-center mb-8">
             <Bot className="text-purple-600 mr-3" size={28} />
             <h3 className="text-2xl font-bold text-gray-800 dark:text-gray-100">
-              AI Projects & Tools
+              AI & Backend Tools
             </h3>
           </div>
 
@@ -239,7 +275,7 @@ const Projects = () => {
           </div>
         </motion.div>
 
-        {/* Automation Projects */}
+        {/* DevOps & Automation */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -249,7 +285,7 @@ const Projects = () => {
           <div className="flex items-center mb-8">
             <Settings className="text-orange-600 mr-3" size={28} />
             <h3 className="text-2xl font-bold text-gray-800 dark:text-gray-100">
-              Automation & Workflows
+              DevOps & Automation
             </h3>
           </div>
 
@@ -291,7 +327,7 @@ const Projects = () => {
             ))}
           </div>
         </motion.div>
-      </div>
+      </motion.div>
     </section>
   );
 };
