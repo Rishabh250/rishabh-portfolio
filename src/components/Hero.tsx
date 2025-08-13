@@ -4,6 +4,8 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 import { ChevronDown, Linkedin, Mail } from 'lucide-react';
 import { useEffect, useState } from 'react';
 
+import ThreeBackground from './ThreeBackground';
+
 const Hero = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const { scrollY } = useScroll();
@@ -23,9 +25,9 @@ const Hero = () => {
 
   const achievements = [
     { number: '2+', label: 'Years Experience', icon: '🚀', color: 'blue' },
-    { number: '400+', label: 'Hours Saved/Month', icon: '⚡', color: 'green' },
-    { number: '30%', label: 'MQL Improvement', icon: '📈', color: 'purple' },
-    { number: '99.99%', label: 'Uptime', icon: '🎯', color: 'orange' },
+    { number: '3+', label: 'Major Projects', icon: '💻', color: 'green' },
+    { number: '10+', label: 'Technologies', icon: '🛠️', color: 'purple' },
+    { number: 'MCA', label: 'Masters Degree', icon: '🎯', color: 'orange' },
   ];
 
   return (
@@ -33,61 +35,20 @@ const Hero = () => {
       id="home"
       className="min-h-screen flex items-center justify-center relative overflow-hidden"
     >
-      {/* Animated Gradient Background */}
+      {/* 3D Background */}
+      <ThreeBackground />
+
+      {/* Animated Gradient Overlay */}
       <div className="absolute inset-0">
         <div
-          className="absolute inset-0 bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-700"
+          className="absolute inset-0 bg-gradient-to-br from-blue-50/20 via-indigo-50/20 to-purple-50/20 dark:from-gray-900/60 dark:via-gray-800/60 dark:to-gray-700/60"
           style={{
-            background: `radial-gradient(circle at ${mousePosition.x}% ${mousePosition.y}%, rgba(59, 130, 246, 0.15) 0%, transparent 50%), 
+            background: `radial-gradient(circle at ${mousePosition.x}% ${mousePosition.y}%, rgba(59, 130, 246, 0.1) 0%, transparent 50%), 
                         linear-gradient(135deg, 
-                          rgba(59, 130, 246, 0.1) 0%, 
-                          rgba(139, 92, 246, 0.1) 50%, 
-                          rgba(236, 72, 153, 0.1) 100%)`,
+                          rgba(59, 130, 246, 0.05) 0%, 
+                          rgba(139, 92, 246, 0.05) 50%, 
+                          rgba(236, 72, 153, 0.05) 100%)`,
           }}
-        />
-
-        {/* Animated Grid Pattern */}
-        <motion.div
-          animate={{
-            backgroundPosition: ['0px 0px', '20px 20px'],
-          }}
-          transition={{
-            duration: 20,
-            repeat: Infinity,
-            ease: 'linear',
-          }}
-          className="absolute inset-0 opacity-30 dark:opacity-20"
-          style={{
-            backgroundImage: `radial-gradient(circle at 1px 1px, rgba(156,146,172,0.3) 1px, transparent 0)`,
-            backgroundSize: '20px 20px',
-          }}
-        />
-
-        {/* Animated Orbs */}
-        <motion.div
-          animate={{
-            scale: [1, 1.2, 1],
-            opacity: [0.3, 0.6, 0.3],
-          }}
-          transition={{
-            duration: 8,
-            repeat: Infinity,
-            ease: 'easeInOut',
-          }}
-          className="absolute top-1/4 left-1/4 w-64 h-64 bg-gradient-to-r from-blue-400/20 to-purple-400/20 rounded-full blur-3xl"
-        />
-
-        <motion.div
-          animate={{
-            scale: [1.2, 1, 1.2],
-            opacity: [0.2, 0.5, 0.2],
-          }}
-          transition={{
-            duration: 10,
-            repeat: Infinity,
-            ease: 'easeInOut',
-          }}
-          className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-gradient-to-r from-purple-400/20 to-pink-400/20 rounded-full blur-3xl"
         />
       </div>
 

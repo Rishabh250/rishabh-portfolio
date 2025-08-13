@@ -115,10 +115,11 @@ const Skills = () => {
             Technical Skills
           </h2>
           <div className="w-24 h-1 bg-blue-600 dark:bg-blue-400 mx-auto mb-8"></div>
-          <p className="text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto mb-12">
             Specialized in backend development, cloud infrastructure, and
             database optimization for scalable applications
           </p>
+          
         </motion.div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">

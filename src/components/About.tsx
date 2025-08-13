@@ -47,7 +47,7 @@ const About = () => {
         <div className="absolute top-20 left-10 w-32 h-32 bg-blue-500 rounded-full blur-3xl"></div>
         <div className="absolute bottom-20 right-10 w-48 h-48 bg-purple-500 rounded-full blur-3xl"></div>
       </motion.div>
-
+      
       <motion.div
         style={{ opacity, scale }}
         className="container mx-auto px-6 relative z-10"
@@ -99,20 +99,20 @@ const About = () => {
             </p>
 
             <p className="text-lg text-gray-300 leading-relaxed mb-6">
-              Currently at Lorien Business Management Pvt Ltd, I&apos;ve
-              collaborated with cross-functional teams to build a CRM platform
-              automating sales operations and internal workflows, saving 400+
-              hours monthly and streamlining business processes. I&apos;ve
-              designed authentication and lead assignment services using Redis
-              and BullMQ for scalable task processing.
+              I&apos;ve collaborated with cross-functional teams to build CRM
+              platforms that automate sales operations and internal workflows,
+              resulting in significant time savings and streamlined business
+              processes. I specialize in designing authentication systems and
+              scalable task processing solutions using Redis and BullMQ.
             </p>
 
             <p className="text-lg text-gray-300 leading-relaxed mb-6">
-              My expertise includes improving database performance through
-              materialized views and strategic indexes, integrating LangChain
-              and OpenAI APIs for intelligent automation, and building CircleCI
-              deployment pipelines for AWS EC2 infrastructure while managing RDS
-              and S3 storage for optimized data handling.
+              My technical expertise spans database optimization through
+              materialized views and strategic indexing, AI integration using
+              LangChain and OpenAI APIs for intelligent automation, and DevOps
+              practices including CI/CD pipeline development. I&apos;m proficient
+              in cloud infrastructure management with AWS services like EC2, RDS,
+              and S3 for scalable and optimized solutions.
             </p>
 
             <div className="flex flex-wrap gap-4">
