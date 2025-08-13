@@ -47,7 +47,7 @@ const About = () => {
         <div className="absolute top-20 left-10 w-32 h-32 bg-blue-500 rounded-full blur-3xl"></div>
         <div className="absolute bottom-20 right-10 w-48 h-48 bg-purple-500 rounded-full blur-3xl"></div>
       </motion.div>
-      
+
       <motion.div
         style={{ opacity, scale }}
         className="container mx-auto px-6 relative z-10"
@@ -110,9 +110,9 @@ const About = () => {
               My technical expertise spans database optimization through
               materialized views and strategic indexing, AI integration using
               LangChain and OpenAI APIs for intelligent automation, and DevOps
-              practices including CI/CD pipeline development. I&apos;m proficient
-              in cloud infrastructure management with AWS services like EC2, RDS,
-              and S3 for scalable and optimized solutions.
+              practices including CI/CD pipeline development. I&apos;m
+              proficient in cloud infrastructure management with AWS services
+              like EC2, RDS, and S3 for scalable and optimized solutions.
             </p>
 
             <div className="flex flex-wrap gap-4">

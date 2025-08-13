@@ -119,7 +119,6 @@ const Skills = () => {
             Specialized in backend development, cloud infrastructure, and
             database optimization for scalable applications
           </p>
-          
         </motion.div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
